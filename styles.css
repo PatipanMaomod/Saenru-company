@@ -1,10 +1,19 @@
 /* styles.css */
 
 /* พื้นหลังอวกาศ */
+/* พื้นหลังอวกาศ */
 body {
-    background-color: #0d0d0d;
+    background-color: #000000;
     color: #ffffff;
     font-family: 'Arial', sans-serif;
+}
+
+/* Custom Navbar */
+.custom-navbar {
+    background: url('image/WallpeperH.jpg') no-repeat center center; /* แทนที่ด้วยพาธรูปภาพจริง */
+    background-size: cover; /* ปรับภาพให้ครอบคลุม */
+    background-attachment: fixed; /* ทำให้ภาพไม่เลื่อนตามเนื้อหา */
+    height: auto; /* ตั้งค่าให้รองรับเนื้อหา */
 }
 
 /* Header */
@@ -14,7 +23,6 @@ body {
     padding: 100px 0;
     color: #fff;
 }
-
 #header h1 {
     font-size: 3rem;
     font-weight: bold;
