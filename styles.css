@@ -8,12 +8,109 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
+.processor-select {
+    display: flex;
+    gap: var(--space-s);
+    margin-bottom: var(--space-m);
+}
+
+.brand-card {
+    flex: 1;
+    padding: var(--space-s);
+    border-radius: var(--radius-s);
+    background: #1a1a1a;
+    color: white;
+    cursor: pointer;
+    gap: var(--space-2xs);
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-card img {
+    width: fit-content;
+    height: 48px;
+}
+
+select {
+    width: 100%;
+    padding: var(--space-2xs);
+    margin-top: var(--space-2xs);
+    background: #2a2a2a;
+    color: white;
+    border: 1px solid #444;
+    border-radius: var(--radius-xs);
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--space-s);
+    margin-top: var(--space-s);
+}
+
+.package-card {
+    background: #1a1a1a;
+    border-radius: var(--radius-s);
+    padding: var(--space-xs);
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.package-card.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.package-title {
+    font-size: 1.2em;
+    margin-bottom: var(--space-2xs);
+}
+
+.package-info {
+    margin: var(--space-4xs) 0;
+    color: #ccc;
+}
+.brand-card img {
+  width: 100%;
+  height: auto;
+}
+
+.select-btn {
+    width: 100%;
+    padding: var(--space-2xs);
+    background: #2ecc71;
+    border: none;
+    border-radius: var(--radius-xs);
+    color: white;
+    cursor: pointer;
+    margin-top: var(--space-2xs);
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.select-btn:hover {
+    background: #45a049;
+}
+
+@media (max-width: 767px) {
+    .processor-select {
+        flex-direction: column;
+    }
+}
+
 /* Custom Navbar */
 .custom-navbar {
-    background: url('image/WallpeperH.jpg') no-repeat center center; /* แทนที่ด้วยพาธรูปภาพจริง */
-    background-size: cover; /* ปรับภาพให้ครอบคลุม */
-    background-attachment: fixed; /* ทำให้ภาพไม่เลื่อนตามเนื้อหา */
-    height: auto; /* ตั้งค่าให้รองรับเนื้อหา */
+    background: url('image/WallpeperH.jpg') no-repeat center center;
+    /* แทนที่ด้วยพาธรูปภาพจริง */
+    background-size: cover;
+    /* ปรับภาพให้ครอบคลุม */
+    background-attachment: fixed;
+    /* ทำให้ภาพไม่เลื่อนตามเนื้อหา */
+    height: auto;
+    /* ตั้งค่าให้รองรับเนื้อหา */
 }
 
 /* Header */
@@ -23,6 +120,7 @@ body {
     padding: 100px 0;
     color: #fff;
 }
+
 #header h1 {
     font-size: 3rem;
     font-weight: bold;
@@ -41,6 +139,63 @@ body {
     font-size: 1rem;
     border-radius: 50px;
 }
+
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Responsive grid */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.package-card {
+    background: #313131;
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.package-card.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.package-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.package-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.package-info {
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.select-btn {
+    width: 100%;
+    padding: 10px;
+    background: #2ecc71;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.select-btn:hover {
+    background: #45a049;
+}
+
 
 /* ฟอนต์พิเศษสำหรับปุ่ม */
 .cta-btn {
@@ -90,7 +245,8 @@ table {
     color: #fff;
 }
 
-th, td {
+th,
+td {
     text-align: center;
     padding: 15px;
 }
@@ -131,24 +287,133 @@ table td {
 }
 
 .icon-img {
-    width: 40px;  /* Set size for all icons */
+    width: 40px;
+    /* Set size for all icons */
     height: 40px;
     transition: transform 0.3s ease;
 }
 
 /* Hover effect to enlarge icons */
 .icon-img:hover {
-    transform: scale(1.5); /* Slightly enlarge the icon on hover */
+    transform: scale(1.5);
+    /* Slightly enlarge the icon on hover */
 }
 
-/* การจัดการ Layout Responsive */
-@media (max-width: 768px) {
-    #header h1 {
-        font-size: 2rem;
-    }
-
-    #header p {
-        font-size: 1rem;
-    }
+.hover-shadow-lg:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+
+
+.mf-cursor {
+    position: absolute;
+    pointer-events: none;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    /* สีพื้นหลังของ cursor */
+    border-radius: 50%;
+    /* ทำให้ cursor เป็นวงกลม */
+    transform-origin: center;
+    transition: all 0.2s ease-in-out;
+    z-index: 99999;
+}
+
+.mf-cursor-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-45deg);
+}
+
+.mf-cursor-media-box {
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    /* สีของส่วนที่เป็นกล่อง */
+    border-radius: 50%;
+}
+
+.mf-cursor-text {
+    font-size: 14px;
+    color: white;
+    position: absolute;
+    bottom: 10px;
+}
+
+
+.mf-cursor {
+    position: fixed;
+    pointer-events: none;
+    /* ไม่ให้มันขัดกับการคลิกอื่นๆ */
+    z-index: 99999;
+}
+
+.mf-cursor-inner {
+    position: absolute;
+    width: 30px;
+    /* ขนาดของเคอร์เซอร์ */
+    height: 30px;
+    background-color: var(--dark);
+    /* ใช้สีที่ต้องการ */
+    border-radius: 50%;
+    transform-origin: center center;
+}
+
+.mf-cursor-media-box {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+#social-links {
+    margin-top: auto;
+    /* Push the footer to the bottom */
+}
+
+.select-btn {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.mf-cursor-text {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--dark);
+    font-size: 12px;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.brand-card img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    .package-card {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .package-title {
+        font-size: 1em;
+    }
+}
