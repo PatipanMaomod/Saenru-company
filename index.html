@@ -38,27 +38,72 @@
     </nav>
     
 
-    <!-- Header Section -->
     <section id="header" class="section text-center">
         <div class="container">
             <h1>แนะนำสินค้า</h1>
             <p>สินค้าที่จะเปลี่ยนชีวิตคุณให้ดียิ่งขึ้น</p>
-            <a href="#" class="btn btn-primary">ดาวน์โหลด</a>
-            <img src="product-image.jpg" alt="Product" class="img-fluid mt-4">
+    
+            <!-- Slider -->
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- สินค้า 1 -->
+                    <div class="carousel-item active">
+                        <div class="row align-items-center">
+                            <!-- ภาพสินค้า -->
+                            <div class="col-md-6">
+                                <img src="image/Stellar Nexus.png" class="img-fluid w-50" alt="Stellar Nexus">
+                            </div>
+                            <!-- ข้อความและปุ่ม -->
+                            <div class="col-md-6 text-start">
+                                <h5>Stellar Nexus</h5>
+                                <p>รายละเอียดสินค้าชิ้นแรก</p>
+                                <button class="btn btn-success mt-3">ซื้อ</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- สินค้า 2 -->
+                    <div class="carousel-item">
+                        <img src="product2.jpg" class="d-block w-50 mx-auto" alt="Product 2">
+                        <div class="carousel-caption">
+                            <h5>สินค้า 2</h5>
+                            <p>รายละเอียดสินค้าชิ้นที่สอง</p>
+                        </div>
+                    </div>
+                    <!-- สินค้า 3 -->
+                    <div class="carousel-item">
+                        <img src="product3.jpg" class="d-block w-50 mx-auto" alt="Product 3">
+                        <div class="carousel-caption">
+                            <h5>สินค้า 3</h5>
+                            <p>รายละเอียดสินค้าชิ้นที่สาม</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- ปุ่มเลื่อนซ้าย-ขวา -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
     </section>
+    
 
       <!-- Features Section -->
       <section id="features" class="section bg-light">
         <div class="container">
-            <h2 class="text-center mb-5">จุดเด่นของสินค้า</h2>
+            <h2 class="text-center mb-5">จุดเด่นสินค้าของร้าน</h2>
             <div class="row">
 
                 <!-- Feature 1 -->
                 <div class="col-md-4 col-sm-6 col-12">
                     <div class="feature-box">
                         <div class="feature-icon">
-                            <i class="bi bi-speedometer"></i>
+                            <i class="bi bi-speedometer" style="color: #7721e8;"></i>
                         </div>
                         <h4>พลังแห่งประสิทธิภาพดุจดวงดาว</h4>
                         <p>สินค้าของเราเปี่ยมด้วยประสิทธิภาพเหนือระดับ ทำงานรวดเร็วและเสถียร
@@ -70,7 +115,7 @@
                 <div class="col-md-4 col-sm-6 col-12">
                     <div class="feature-box">
                         <div class="feature-icon">
-                            <i class="bi bi-shield-lock"></i>
+                            <i class="bi bi-shield-lock" style="color: #7721e8;"></i>
                         </div>
                         <h4>เกราะป้องกันแห่งจักรวาล</h4>
                         <p>มาตรการรักษาความปลอดภัยขั้นสูงดุจโล่พลังงานที่คุ้มครองยานสำรวจ
@@ -82,7 +127,7 @@
                 <div class="col-md-4 col-sm-6 col-12">
                     <div class="feature-box">
                         <div class="feature-icon">
-                            <i class="bi bi-gear"></i>
+                            <i class="bi bi-gear" style="color: #7721e8;"></i>
                         </div>
                         <h4>ปรับแต่งได้ตามใจในห้วงมิติ</h4>
                         <p>สามารถปรับเปลี่ยนฟังก์ชันต่าง ๆ ให้สอดคล้องกับความต้องการ ราวกับสร้างยานอวกาศในแบบของคุณเอง
@@ -94,7 +139,7 @@
                 <div class="col-md-4 col-sm-6 col-12">
                     <div class="feature-box">
                         <div class="feature-icon">
-                            <i class="bi bi-laptop"></i>
+                            <i class="bi bi-laptop" style="color: #7721e8;"></i>
                         </div>
                         <h4>รองรับทุกอุปกรณ์ในจักรวาล</h4>
                         <p>ใช้งานได้ทุกที่ทุกเวลา ไม่ว่าคุณจะอยู่บนดาวเคราะห์ดวงใด รองรับทั้งบนมือถือ แท็บเล็ต
@@ -106,7 +151,7 @@
                 <div class="col-md-4 col-sm-6 col-12">
                     <div class="feature-box">
                         <div class="feature-icon">
-                            <i class="bi bi-palette"></i>
+                            <i class="bi bi-palette" style="color: #7721e8;"></i>
                         </div>
                         <h4>ดีไซน์ล้ำยุคแห่งกาแล็กซี</h4>
                         <p>การออกแบบที่ทันสมัยและใช้งานง่าย ราวกับแสงจากดาวฤกษ์ที่นำทาง</p>
@@ -117,7 +162,7 @@
                 <div class="col-md-4 col-sm-6 col-12">
                     <div class="feature-box">
                         <div class="feature-icon">
-                            <i class="bi bi-people" style="color: #ff5733;"></i>
+                            <i class="bi bi-people" style="color: #7721e8;"></i>
                         </div>
                         <h4>พันธมิตรแห่งดวงดาว</h4>
                         <p>ทีมงานผู้เชี่ยวชาญพร้อมดูแลคุณตลอด 24 ชั่วโมง ไม่ว่าจะอยู่ส่วนไหนของจักรวาล
