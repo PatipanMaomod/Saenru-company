@@ -1,11 +1,13 @@
-/* styles.css */
 
-/* พื้นหลังอวกาศ */
-/* พื้นหลังอวกาศ */
 body {
     background-color: #212529;
     color: white;
+
 }
+
+section {
+    margin-top: 50px; /* เพิ่มช่องว่าง 50px ด้านบน */
+  }
 
 .processor-select {
     display: flex;
