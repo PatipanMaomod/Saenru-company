@@ -12,6 +12,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
+
+
 <body>
 
     <!-- Navbar -->
@@ -32,11 +34,70 @@
                     <li class="nav-item"><a class="nav-link" href="product.html">Product</a></li>
                     <li class="nav-item"><a class="nav-link" href="#cta">Call to Action</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="btn btn-outline-light me-2">Login</a>
+                        <a href="#" class="btn" style="background-color: #930fc8; color: white;">สมัครสมาชิก</a>
+
                 </ul>
             </div>
         </div>
     </nav>
-    
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Animation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Section */
+        #section-to-fade {
+            background: url('image/Shopland-removebg.png') no-repeat center center;
+            color: white;
+            height: 100vh; /* ให้เต็มหน้าจอ */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-align: center;
+            transition: opacity 0.5s ease, transform 0.5s ease; /* การเปลี่ยนแปลงที่นุ่มนวล */
+        }
+
+        /* เนื้อหาส่วนถัดไป */
+        #content {
+            background-color: #f4f4f4;
+            height: 200vh; /* ความสูงยาวสำหรับการเลื่อน */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Section ที่ต้องการให้จาง -->
+    <section id="section-to-fade">
+        
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        const section = document.getElementById("section-to-fade");
+
+        window.addEventListener("scroll", () => {
+            // ตรวจจับการเลื่อนของหน้า
+            const scrollY = window.scrollY; // ตำแหน่งการเลื่อน
+            const height = window.innerHeight; // ความสูงของหน้าจอ
+
+            // ย่อลงและจางลงตามการเลื่อน
+            if (scrollY < height) {
+                const scale = 1 - scrollY / height; // ลดขนาดตามตำแหน่งการเลื่อน
+                const opacity = 1 - scrollY / height; // ลดความโปร่งใส
+                section.style.transform = `scale(${scale})`; // ใช้ transform ย่อขนาด
+                section.style.opacity = opacity; // จัดการความโปร่งใส
+            }
+        });
+    </script>
+</body>
 
     <section id="header" class="section text-center">
         <div class="container">
