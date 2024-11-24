@@ -32,6 +32,16 @@
                     <li class="nav-item"><a class="nav-link" href="product.html">Product</a></li>
                     <li class="nav-item"><a class="nav-link" href="#cta">Call to Action</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="btn btn-outline-light me-2" onclick="showAlert('Login')">Login</a>
+                        <a href="#" class="btn" style="background-color: #930fc8; color: white;" onclick="showAlert('Register')">Register</a>
+                        <script>
+                            // ฟังก์ชันแสดงหน้าต่างแจ้งเตือน
+                            function showAlert(action) {
+                                alert(`กำลังดำเนินการ: ${action}\nกรุณารอก่อนนะ!`);
+                            }
+                        </script>
+
                 </ul>
             </div>
         </div>

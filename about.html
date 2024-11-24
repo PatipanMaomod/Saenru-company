@@ -11,7 +11,7 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="image/logo.png" alt="Logo" style="height: 60px;">
@@ -23,13 +23,21 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Header</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#features">Features</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#Testimonial">Testimonial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonial">Testimonial</a></li>
                     <li class="nav-item"><a class="nav-link" href="product.html">Product</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#cta">Call to Action</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cta">Call to Action</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="btn btn-outline-light me-2" onclick="showAlert('Login')">Login</a>
+                        <a href="#" class="btn" style="background-color: #930fc8; color: white;" onclick="showAlert('Register')">Register</a>
+                        <script>
+                            // ฟังก์ชันแสดงหน้าต่างแจ้งเตือน
+                            function showAlert(action) {
+                                alert(`กำลังดำเนินการ: ${action}\nกรุณารอก่อนนะ!`);
+                            }
+                        </script>
+
                 </ul>
             </div>
         </div>
@@ -46,7 +54,7 @@
             <div class="row">
                 <!-- Team Member 1 -->
                 <div class="col-md-6 col-12 team-member text-center">
-                    <img src="image/image.png" alt="นายปฏิภาณ เมาโหมด" class="img-fluid">
+                    <img src="image/logo.png" alt="นายปฏิภาณ เมาโหมด" class="img-fluid">
                     <h4>นายปฏิภาณ เมาโหมด</h4>
                     <p>หัวหน้าภารกิจการเก็บรวบรวม</p>
                     <p>มีประสบการณ์ในการสำรวจอวกาศและนำของแปลกๆ กลับมาเพื่อวางขายบนโลก ผ่านการผจญภัยในภารกิจที่เสี่ยงสูง</p>

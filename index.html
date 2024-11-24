@@ -35,8 +35,14 @@
                     <li class="nav-item"><a class="nav-link" href="#cta">Call to Action</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
                     <li class="nav-item">
-                        <a href="#" class="btn btn-outline-light me-2">Login</a>
-                        <a href="#" class="btn" style="background-color: #930fc8; color: white;">สมัครสมาชิก</a>
+                        <a href="#" class="btn btn-outline-light me-2" onclick="showAlert('Login')">Login</a>
+                        <a href="#" class="btn" style="background-color: #930fc8; color: white;" onclick="showAlert('Register')">Register</a>
+                        <script>
+                            // ฟังก์ชันแสดงหน้าต่างแจ้งเตือน
+                            function showAlert(action) {
+                                alert(`กำลังดำเนินการ: ${action}\nกรุณารอก่อนนะ!`);
+                            }
+                        </script>
 
                 </ul>
             </div>
@@ -54,9 +60,11 @@
 
         /* Section */
         #section-to-fade {
-            background: url('image/Shopland-removebg.png') no-repeat center center;
-            color: white;
-            height: 100vh; /* ให้เต็มหน้าจอ */
+            
+            background: url('image/Shopland-removebg (1).png') center center;
+            background-size: 110%;
+            color: rgb(0, 0, 0);
+            height: 50vh; /* ให้เต็มหน้าจอ */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -76,7 +84,30 @@
 <body>
     <!-- Section ที่ต้องการให้จาง -->
     <section id="section-to-fade">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Fantasy Text</title>
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap'); /* เพิ่มฟอนต์แฟนตาซี */
         
+                .fantasy-text {
+                    font-family: 'MedievalSharp', cursive; /* ฟอนต์แฟนตาซี */
+                    font-size: 150px; /* ขนาดของข้อความ */
+                    font-weight: bold; /* น้ำหนักตัวอักษร */
+                    color: #ffd000; /* สีของตัวอักษร */
+                    text-shadow: 
+                        3px 3px 5px rgba(0, 0, 0, 0.7), /* เงาด้านล่าง */
+                        -3px -3px 5px rgba(255, 255, 255, 0.4); /* แสงเงาด้านบน */
+                    text-align: center;
+                    margin: 50px 0;
+                }
+            </style>
+        </head>
+        <body>
+            <p class="fantasy-text">Saenru Shop</p>
+        </body>
+ 
     </section>
 
     <!-- JavaScript -->
@@ -245,31 +276,6 @@
                     </div>
                 </div>
 
-            </div>
-        </div>
-    </section>
-
-     <!-- Optional Call to Action Section -->
-     <section id="cta" class="section text-center">
-        <div class="container">
-            <h2>พร้อมใช้งานแล้ว! อย่ารอช้า</h2>
-            <a href="product.html" class="cta-btn">ซื้อเลย</a>
-        </div>
-    </section>
-
-    <!-- Optional Testimonial Section -->
-    <section id="testimonial" class="section">
-        <div class="container">
-            <h2 class="text-center">คำรับรองจากลูกค้า</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <p>"ผลิตภัณฑ์นี้ยอดเยี่ยมมาก! ใช้งานง่ายและมีประสิทธิภาพ"</p>
-                    <p><strong>ลูกค้า 1</strong></p>
-                </div>
-                <div class="col-md-6">
-                    <p>"รู้สึกประทับใจตั้งแต่เริ่มใช้ ช่วยให้ชีวิตสะดวกขึ้นมาก"</p>
-                    <p><strong>ลูกค้า 2</strong></p>
-                </div>
             </div>
         </div>
     </section>
