@@ -390,24 +390,45 @@ table td {
     }
 }
 
-.card{
-	width: 250px;
-	box-shadow:  0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19); 
-	border-radius: 8px;
+
+.container222 {
+    background-color: #fff;
+    width: 1000px;
+    height: 100vh;
+    /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
 }
-.maintxt{
-	color: #1f1f1f;
-	font-weight: 500;
-	font-size: 14.5px;
+
+.maintxt {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 14.5px;
 }
-.name{
-	color: #000;
-	font-size: 16px;
-	font-weight: bold;
+
+.name {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
 }
-.para{
-	color: #8c8c8c;
-	font-size: 12px;
-	position: relative;
-	bottom: 3px;
+
+.para {
+    color: #8c8c8c;
+    font-size: 12px;
+    position: relative;
+    bottom: 3px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
+/* Apply the font to the .fantasy-text class */
+#section-to-fade .fantasy-text {
+    font-family: 'Cinzel', serif;  /* Apply the 'Cinzel' fantasy font */
+    font-size: 4rem;  /* Adjust the font size as needed */
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.7);  /* Optional: Add a text shadow for effect */
+    color: #ffcc00;  /* Adjust text color for better visibility */
+    letter-spacing: 2px;  /* Optional: Add spacing between letters for dramatic effect */
 }
