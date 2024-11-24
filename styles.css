@@ -1,12 +1,12 @@
 body {
     background-color: #212529;
     color: white;
-
+    height: 100%;
+    margin: 0;
 }
 
 section {
     margin-top: 50px;
-    /* เพิ่มช่องว่าง 50px ด้านบน */
 }
 
 .processor-select {
@@ -28,8 +28,8 @@ section {
 }
 
 .brand-card img {
-    width: fit-content;
-    height: 48px;
+    width: 100%;
+    height: auto;
 }
 
 select {
@@ -41,7 +41,6 @@ select {
     border: 1px solid #444;
     border-radius: var(--radius-xs);
 }
-
 
 .card {
     background-color: #121212;
@@ -87,19 +86,13 @@ select {
     }
 }
 
-/* Custom Navbar */
 .custom-navbar {
     background: url('image/WallpeperH.jpg') no-repeat center center;
-    /* แทนที่ด้วยพาธรูปภาพจริง */
     background-size: cover;
-    /* ปรับภาพให้ครอบคลุม */
     background-attachment: fixed;
-    /* ทำให้ภาพไม่เลื่อนตามเนื้อหา */
     height: auto;
-    /* ตั้งค่าให้รองรับเนื้อหา */
 }
 
-/* Header */
 #header {
     background: url('https://source.unsplash.com/1600x900/?space') no-repeat center center fixed;
     background-size: cover;
@@ -126,11 +119,9 @@ select {
     border-radius: 50px;
 }
 
-
 .packages-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    /* Responsive grid */
     gap: 20px;
     margin-top: 20px;
 }
@@ -167,23 +158,6 @@ select {
     margin-bottom: 15px;
 }
 
-.select-btn {
-    width: 100%;
-    padding: 10px;
-    background: #2ecc71;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.select-btn:hover {
-    background: #45a049;
-}
-
-
-/* ฟอนต์พิเศษสำหรับปุ่ม */
 .cta-btn {
     background-color: #3f51b5;
     color: white;
@@ -201,7 +175,6 @@ select {
     transition: all 0.3s ease-in-out;
 }
 
-/* จัดการพื้นหลังและการแสดงผล */
 .section {
     padding: 60px 0;
 }
@@ -216,13 +189,6 @@ select {
 
 #testimonial .row {
     margin-top: 20px;
-}
-
-#testimonial .col-md-6 {
-    border: 1px solid #444;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
 }
 
 table {
@@ -245,7 +211,6 @@ table td {
     border-top: 1px solid #444;
 }
 
-/* Features */
 .feature-icon i {
     font-size: 3rem;
     color: #ff9800;
@@ -274,33 +239,21 @@ table td {
 
 .icon-img {
     width: 40px;
-    /* Set size for all icons */
     height: 40px;
     transition: transform 0.3s ease;
 }
 
-/* Hover effect to enlarge icons */
 .icon-img:hover {
     transform: scale(1.5);
-    /* Slightly enlarge the icon on hover */
 }
-
-.hover-shadow-lg:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-
 
 .mf-cursor {
-    position: absolute;
+    position: fixed;
     pointer-events: none;
     width: 40px;
     height: 40px;
     background-color: red;
-    /* สีพื้นหลังของ cursor */
     border-radius: 50%;
-    /* ทำให้ cursor เป็นวงกลม */
-    transform-origin: center;
     transition: all 0.2s ease-in-out;
     z-index: 99999;
 }
@@ -318,7 +271,6 @@ table td {
     width: 20px;
     height: 20px;
     background-color: blue;
-    /* สีของส่วนที่เป็นกล่อง */
     border-radius: 50%;
 }
 
@@ -329,131 +281,52 @@ table td {
     bottom: 10px;
 }
 
-
-.mf-cursor {
-    position: fixed;
-    pointer-events: none;
-    /* ไม่ให้มันขัดกับการคลิกอื่นๆ */
-    z-index: 99999;
-}
-
-.mf-cursor-inner {
-    position: absolute;
-    width: 30px;
-    /* ขนาดของเคอร์เซอร์ */
-    height: 30px;
-    background-color: var(--dark);
-    /* ใช้สีที่ต้องการ */
-    border-radius: 50%;
-    transform-origin: center center;
-}
-
-.mf-cursor-media-box {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-}
-
 #social-links {
     margin-top: auto;
-    /* Push the footer to the bottom */
 }
 
-.select-btn {
-    margin-top: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
+.testimonial-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.testimonial-list li {
+    margin-bottom: 20px;
+}
+
+.testimonial-list .card {
     cursor: pointer;
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s ease;
 }
 
-.mf-cursor-text {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--dark);
-    font-size: 12px;
+.testimonial-list .card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-body {
-    height: 100%;
-    margin: 0;
-}
-
-.main-container {
+.testimonial-list .d-flex {
     display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.brand-card img {
-    width: 100%;
-    height: auto;
-}
-
-@media (max-width: 767px) {
-    .package-card {
-        padding: 10px;
-        margin: 10px;
-    }
-
-    .package-title {
-        font-size: 1em;
-    }
-}
-
-.testimonials {
-    padding: 40px 20px;
-    background-color: #f4f4f4;
-}
-
-h2 {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-.testimonial-container {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 
-.testimonial {
-    background-color: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 50%;
-    border-radius: 8px;
-    text-align: left;
-    display: none;
-    /* Initially hide all testimonials */
+.testimonial-list img {
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
-.testimonial-description {
+.testimonial-list .font-weight-normal {
+    font-weight: 600;
+}
+
+.ratings i {
+    color: #FFD700;
+    margin-right: 3px;
+}
+
+.card-body p {
     font-size: 16px;
-    margin-bottom: 20px;
     color: #555;
 }
-
-.toggle-btn {
-    padding: 8px 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.toggle-btn:hover {
-    background-color: #45a049;
-}
-/* Importing fonts from Google */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 /* Reseting */
 * {
@@ -502,41 +375,17 @@ h2 {
     transition: all 0.3s ease-in-out;
 }
 
-.owl-carousel .owl-item.active.center .card {
+.owl-carousel .owl-item.active .card {
     opacity: 1;
     transform: scale3d(1, 1, 1);
 }
 
-.owl-carousel .owl-dots {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-
-.owl-theme .owl-dots .owl-dot span {
-    height: 20px;
-    background: #2a6ba3 !important;
-    border-radius: 2px !important;
-    opacity: 0.8;
-}
-
-.owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover span {
-    height: 13px;
-    width: 13px;
-    opacity: 1;
-    transform: translateY(2px);
-    background: #83b8e7 !important;
-}
-
-@media(min-width: 480.6px) and (max-width: 575.5px) {
-    .owl-carousel .owl-item .card .name {
-        left: 24%;
+@media (max-width: 1199px) {
+    .card-body {
+        padding: 1.5rem;
     }
-}
 
-@media(max-width: 360px) {
-    .owl-carousel .owl-item .card .name {
-        left: 30%;
+    .card-body p {
+        font-size: 14px;
     }
 }
