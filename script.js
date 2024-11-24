@@ -39,27 +39,41 @@ function showPackages(packagesJson) {
             card.classList.add('fade-in');
         }, index * 50);
     });
+
+
+}
+function changeTestimonial(testimonialId) {
+    // ซ่อนทั้งหมด
+    var testimonials = document.querySelectorAll('.testimonial');
+    testimonials.forEach(function (testimonial) {
+        testimonial.style.display = 'none';
+    });
+
+    // แสดง testimonial ที่เลือก
+    document.getElementById('testimonial' + testimonialId).style.display = 'block';
 }
 
-$('.testimonials-container').owlCarousel({
-    loop:true,
-    autoplay:true,
-    autoplayTimeout:6000,
-    margin:10,
-    nav:true,
-    navText:["<i class='fa-solid fa-arrow-left'></i>",
-             "<i class='fa-solid fa-arrow-right'></i>"],
-    responsive:{
-        0:{
-            items:1,
-            nav:false
-        },
-        600:{
-            items:1,
-            nav:true
-        },
-        768:{
-            items:2
-        },
-    }
-})
+
+$(document).ready(function () {
+    var silder = $(".owl-carousel");
+    silder.owlCarousel({
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: false,
+        items: 1,
+        stagePadding: 20,
+        center: true,
+        nav: false,
+        margin: 50,
+        dots: true,
+        loop: true,
+        responsive: {
+            0: { items: 1 },
+            480: { items: 2 },
+            575: { items: 2 },
+            768: { items: 2 },
+            991: { items: 3 },
+            1200: { items: 4 }
+        }
+    });
+});
