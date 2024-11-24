@@ -46,8 +46,14 @@
                     <li class="nav-item"><a class="nav-link" href="#cta">Call to Action</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
                     <li class="nav-item">
-                        <a href="#" class="btn btn-outline-light me-2">Login</a>
-                        <a href="#" class="btn" style="background-color: #930fc8; color: white;">สมัครสมาชิก</a>
+                        <a href="#" class="btn btn-outline-light me-2" onclick="showAlert('Login')">Login</a>
+                        <a href="#" class="btn" style="background-color: #930fc8; color: white;" onclick="showAlert('Register')">Register</a>
+                        <script>
+                            // ฟังก์ชันแสดงหน้าต่างแจ้งเตือน
+                            function showAlert(action) {
+                                alert(`กำลังดำเนินการ: ${action}\nกรุณารอก่อนนะ!`);
+                            }
+                        </script>
 
                 </ul>
             </div>
@@ -64,36 +70,32 @@
                 font-family: Arial, sans-serif;
             }
 
-            /* Section */
-            #section-to-fade {
-                background: url('image/Shopland-removebg.png') no-repeat center center;
-                color: white;
-                height: 100vh;
-                /* ให้เต็มหน้าจอ */
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 2rem;
-                text-align: center;
-                transition: opacity 0.5s ease, transform 0.5s ease;
-                /* การเปลี่ยนแปลงที่นุ่มนวล */
-            }
+        /* Section */
+        #section-to-fade {
+            background: url('image/Shopland-removebg.png') no-repeat center center;
+            color: white;
+            height: 100vh; /* ให้เต็มหน้าจอ */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-align: center;
+            transition: opacity 0.5s ease, transform 0.5s ease; /* การเปลี่ยนแปลงที่นุ่มนวล */
+        }
 
-            /* เนื้อหาส่วนถัดไป */
-            #content {
-                background-color: #f4f4f4;
-                height: 200vh;
-                /* ความสูงยาวสำหรับการเลื่อน */
-                padding: 20px;
-            }
-        </style>
-    </head>
-
-    <body>
-        <!-- Section ที่ต้องการให้จาง -->
-        <section id="section-to-fade">
-
-        </section>
+        /* เนื้อหาส่วนถัดไป */
+        #content {
+            background-color: #f4f4f4;
+            height: 200vh; /* ความสูงยาวสำหรับการเลื่อน */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Section ที่ต้องการให้จาง -->
+    <section id="section-to-fade">
+        
+    </section>
 
         <!-- JavaScript -->
         <script>
@@ -268,6 +270,8 @@
             </div>
         </div>
     </section>
+
+
 
     <!-- Optional Testimonial Section -->
     <section id="testimonial" class="section py-5">
