@@ -3,9 +3,8 @@
 /* พื้นหลังอวกาศ */
 /* พื้นหลังอวกาศ */
 body {
-    background-color: #000000;
-    color: #ffffff;
-    font-family: 'Arial', sans-serif;
+    background-color: #212529;
+    color: white;
 }
 
 .processor-select {
@@ -41,40 +40,25 @@ select {
     border-radius: var(--radius-xs);
 }
 
-.packages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: var(--space-s);
-    margin-top: var(--space-s);
-}
 
-.package-card {
-    background: #1a1a1a;
-    border-radius: var(--radius-s);
-    padding: var(--space-xs);
+.card {
+    background-color: #121212;
+    border: none;
     color: white;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.package-card.fade-in {
-    opacity: 1;
-    transform: translateY(0);
+.card:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
 }
 
-.package-title {
-    font-size: 1.2em;
-    margin-bottom: var(--space-2xs);
+.choose-btn {
+    background-color: #198754;
+    color: white;
 }
 
-.package-info {
-    margin: var(--space-4xs) 0;
-    color: #ccc;
-}
-.brand-card img {
-  width: 100%;
-  height: auto;
+.choose-btn:hover {
+    background-color: #145a32;
 }
 
 .select-btn {
