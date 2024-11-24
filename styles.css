@@ -130,6 +130,17 @@ table td {
     color: #cfcfcf;
 }
 
+.icon-img {
+    width: 40px;  /* Set size for all icons */
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect to enlarge icons */
+.icon-img:hover {
+    transform: scale(1.5); /* Slightly enlarge the icon on hover */
+}
+
 /* การจัดการ Layout Responsive */
 @media (max-width: 768px) {
     #header h1 {
@@ -140,3 +151,4 @@ table td {
         font-size: 1rem;
     }
 }
+
