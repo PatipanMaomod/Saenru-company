@@ -1,16 +1,220 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saenru Company</title>
+    <title>แนะนำสินค้า</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Custom styles for better visualization */
+        .section { padding: 60px 0; }
+        .feature-icon { font-size: 40px; color: #007bff; }
+        .cta-btn { background-color: #007bff; color: white; padding: 10px 30px; border-radius: 5px; }
+    </style>
 </head>
 <body>
-    <div>
-        <section>
-            
-        </section>
-    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">แนะนำสินค้า</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#header">Header</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonial">Testimonial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#price">Price List</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cta">Call to Action</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">เกี่ยวกับเรา</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section id="header" class="section text-center">
+        <div class="container">
+            <h1>แนะนำสินค้า</h1>
+            <p>สินค้าที่จะเปลี่ยนชีวิตคุณให้ดียิ่งขึ้น</p>
+            <a href="#" class="btn btn-primary">ดาวน์โหลด</a>
+            <img src="product-image.jpg" alt="Product" class="img-fluid mt-4">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center">คุณสมบัติของผลิตภัณฑ์</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="feature-icon mb-3">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+                    <h4>คุณสมบัติ 1</h4>
+                    <p>คำอธิบายของคุณสมบัติ 1 ของผลิตภัณฑ์นี้</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-icon mb-3">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+                    <h4>คุณสมบัติ 2</h4>
+                    <p>คำอธิบายของคุณสมบัติ 2 ของผลิตภัณฑ์นี้</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-icon mb-3">
+                        <i class="bi bi-check-circle"></i>
+                    </div>
+                    <h4>คุณสมบัติ 3</h4>
+                    <p>คำอธิบายของคุณสมบัติ 3 ของผลิตภัณฑ์นี้</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features Section -->
+    <section id="features" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">จุดเด่นของสินค้า</h2>
+            <div class="row">
+
+                <!-- Feature 1 -->
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-speedometer"></i>
+                        </div>
+                        <h4>ประสิทธิภาพสูง</h4>
+                        <p>สินค้าของเรามีประสิทธิภาพสูง ทำงานได้รวดเร็วและมีความเสถียร</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-lock"></i>
+                        </div>
+                        <h4>ความปลอดภัยที่มั่นคง</h4>
+                        <p>เรามีมาตรการรักษาความปลอดภัยขั้นสูงเพื่อปกป้องข้อมูลของคุณ</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-gear"></i>
+                        </div>
+                        <h4>การปรับแต่งที่ง่าย</h4>
+                        <p>สามารถปรับแต่งและปรับเปลี่ยนฟังก์ชันต่าง ๆ ได้ตามความต้องการ</p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <h4>รองรับหลายอุปกรณ์</h4>
+                        <p>ใช้งานได้ทุกที่ทุกเวลา รองรับทั้งบนมือถือ แท็บเล็ต และคอมพิวเตอร์</p>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-palette"></i>
+                        </div>
+                        <h4>ดีไซน์ที่ทันสมัย</h4>
+                        <p>สินค้าของเรามีการออกแบบที่ทันสมัยและใช้งานง่าย</p>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h4>บริการลูกค้าที่ยอดเยี่ยม</h4>
+                        <p>เรามีทีมงานที่พร้อมให้บริการคุณตลอด 24 ชั่วโมง</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional Testimonial Section -->
+    <section id="testimonial" class="section">
+        <div class="container">
+            <h2 class="text-center">คำรับรองจากลูกค้า</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>"ผลิตภัณฑ์นี้ยอดเยี่ยมมาก! ใช้งานง่ายและมีประสิทธิภาพ"</p>
+                    <p><strong>ลูกค้า 1</strong></p>
+                </div>
+                <div class="col-md-6">
+                    <p>"รู้สึกประทับใจตั้งแต่เริ่มใช้ ช่วยให้ชีวิตสะดวกขึ้นมาก"</p>
+                    <p><strong>ลูกค้า 2</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     
+
+    <!-- Optional Price List Section -->
+    <section id="price" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center">รายการราคา</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>แพ็คเกจ</th>
+                        <th>ราคา</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>แพ็คเกจพื้นฐาน</td>
+                        <td>฿1000</td>
+                    </tr>
+                    <tr>
+                        <td>แพ็คเกจพรีเมียม</td>
+                        <td>฿2000</td>
+                    </tr>
+                    <tr>
+                        <td>แพ็คเกจสุดยอด</td>
+                        <td>฿3000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Optional Call to Action Section -->
+    <section id="cta" class="section text-center">
+        <div class="container">
+            <h2>พร้อมใช้งานแล้ว! อย่ารอช้า</h2>
+            <a href="#" class="cta-btn">ซื้อเลย</a>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
