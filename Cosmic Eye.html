@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Saenru Shop</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product-detail {
+            padding: 30px;
+        }
+
+        .product-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product-info {
+            margin-left: 30px;
+        }
+
+        .product-info h2 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .product-info p {
+            font-size: 16px;
+        }
+
+        .btn-add-to-cart {
+            background-color: #7721e8;
+            color: white;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s, transform 0.2s ease;
+        }
+
+        .btn-add-to-cart:hover {
+            background-color: #5a13c1;
+        }
+
+        .product-description {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .product-description h3 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="image/logo.png" alt="Logo" style="height: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#Testimonial">Testimonial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="product.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="btn btn-outline-light me-2" onclick="showAlert('Login')">Login</a>
+                        <a href="#" class="btn" style="background-color: #930fc8; color: white;"
+                            onclick="showAlert('Register')">Register</a>
+                        <script>
+                            // ฟังก์ชันแสดงหน้าต่างแจ้งเตือน
+                            function showAlert(action) {
+                                alert(`กำลังดำเนินการ: ${action}\nกรุณารอก่อนนะ!`);
+                            }
+                        </script>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <div class="container product-detail">
+        <div class="row">
+            <!-- Product Image -->
+            <div class="col-md-6">
+                <img src="image/Cosmic Eye.png" alt="Product Image" class="product-img">
+            </div>
+
+            <!-- Product Information -->
+            <div class="col-md-6 product-info">
+                <h2>Cosmic Eye</h2>
+                <p><strong>Price:</strong> $80</p>
+                <p><strong>Availability:</strong> In Stock</p>
+                <p><strong>Category:</strong> Category Name</p>
+                <button class="btn-add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+
+        <!-- Product Description -->
+        <div class="product-description">
+            <h3>Product Description</h3>
+            <p>This is a detailed description of the product. Here, you can provide more information about the product's features, benefits, and any other important details that will help the customer make a purchasing decision. You can also include specifications, usage instructions, or any other relevant information about the product.</p>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="product-reviews mt-4">
+            <h3>Customer Reviews</h3>
+            <div class="review">
+                <p><strong>John Doe</strong> - <span class="text-muted">5 stars</span></p>
+                <p>This product is amazing! It works exactly as described and I am very happy with my purchase.</p>
+            </div>
+            <div class="review">
+                <p><strong>Jane Smith</strong> - <span class="text-muted">4 stars</span></p>
+                <p>Good quality, but it took a little longer to arrive than expected.</p>
+            </div>
+        </div>
+    </div>
+
+    <section id="social-links" class="bg-dark py-4">
+        <div class="container text-center">
+            <h3 class="text-white mb-4">Contact us</h3>
+            <div class="d-flex justify-content-center align-items-center">
+                <!-- Facebook Icon -->
+                <a href="https://facebook.com" class="text-white mx-3" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                        alt="Facebook" class="icon-img" style="width: 30px; height: 30px;">
+                </a>
+    
+                <!-- X (Twitter) Icon -->
+                <a href="https://x.com/" class="text-white mx-3" target="_blank">
+                    <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg"
+                        alt="X" class="icon-img" style="width: 30px; height: 30px;">
+                </a>
+    
+                <!-- Instagram Icon -->
+                <a href="https://instagram.com" class="text-white mx-3" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
+                        class="icon-img" style="width: 30px; height: 30px;">
+                </a>
+    
+                <!-- Gmail Icon -->
+                <a href="mailto:example@gmail.com" class="text-white mx-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png"
+                        alt="Gmail" class="icon-img" style="width: 30px; height: 30px;">
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
