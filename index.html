@@ -15,7 +15,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
+    <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="image/logo.png" alt="Logo" style="height: 60px;">
@@ -24,6 +24,8 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Header</a></li>
@@ -47,337 +49,282 @@
         </div>
     </nav>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Scroll Animation</title>
-        <style>
-            body {
-                margin: 0;
-                font-family: Arial, sans-serif;
-            }
 
-            /* Section */
-            #section-to-fade {
-                background: url('image/Shopland-removebg (1).png') center center;
-                color: white;
-                height: 70vh;
-                /* ให้เต็มหน้าจอ */
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 2rem;
-                text-align: center;
-                transition: opacity 0.5s ease, transform 0.5s ease;
-                /* การเปลี่ยนแปลงที่นุ่มนวล */
-            }
-
-            /* เนื้อหาส่วนถัดไป */
-            #content {
-
-                background-color: #f4f4f4;
-                height: 200vh;
-                /* ความสูงยาวสำหรับการเลื่อน */
-                padding: 20px;
-            }
-        </style>
-    </head>
-
-    <body>
-        <!-- Section ที่ต้องการให้จาง -->
-        <section id="section-to-fade">
-            <h1 class="fantasy-text">Saenru Shop</h1>
-        </section>
-        
-        <script>
-            const section = document.getElementById("section-to-fade");
-
-            window.addEventListener("scroll", () => {
-                // ตรวจจับการเลื่อนของหน้า
-                const scrollY = window.scrollY; // ตำแหน่งการเลื่อน
-                const height = window.innerHeight; // ความสูงของหน้าจอ
-
-                // ย่อลงและจางลงตามการเลื่อน
-                if (scrollY < height) {
-                    const scale = 1 - scrollY / height; // ลดขนาดตามตำแหน่งการเลื่อน
-                    const opacity = 1 - scrollY / height; // ลดความโปร่งใส
-                    section.style.transform = `scale(${scale})`; // ใช้ transform ย่อขนาด
-                    section.style.opacity = opacity; // จัดการความโปร่งใส
-                }
-            });
-        </script>
-    </body>
-
-    <section id="header" class="section text-center">
-        <div class="container">
-            <h1>แนะนำสินค้า</h1>
-            <p>สินค้าที่จะเปลี่ยนชีวิตคุณให้ดียิ่งขึ้น</p>
-
-            <!-- Slider -->
-            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <!-- สินค้า 1 -->
-                    <div class="carousel-item active">
-                        <div class="row align-items-center">
-                            <!-- ภาพสินค้า -->
-                            <div class="col-md-6">
-                                <img src="image/Stellar Nexus.png" class="img-fluid w-50" alt="Stellar Nexus">
-                            </div>
-                            <!-- ข้อความและปุ่ม -->
-                            <div class="col-md-6 text-start">
-                                <h5>Stellar Nexus</h5>
-                                <p>คุณพร้อมหรือยังที่จะเป็นผู้ถือครองศูนย์กลางจักรวาลแห่งความเป็นไปไม่ได้?
-                                    จงก้าวสู่โลกของสิ่งแปลกประหลาดก่อนใคร!</p>
-                                <a href="product.html" class="cta-btn">ซื้อ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- สินค้า 2 -->
-                    <div class="carousel-item">
-                        <div class="row align-items-center">
-                            <!-- ภาพสินค้า -->
-                            <div class="col-md-6">
-                                <img src="image/Aether Grip.png" class="img-fluid w-50" alt="Aether Grip">
-                            </div>
-                            <!-- ข้อความและปุ่ม -->
-                            <div class="col-md-6 text-start">
-                                <h5>Aether Grip</h5>
-                                <p>ปลดล็อกขีดจำกัดของมนุษย์ด้วย AetherGrip!
-                                    แขนกลอัจฉริยะที่ผสานเทคโนโลยีล้ำยุคและพลังงานแห่งอีเธอร์</p>
-                                <a href="product.html" class="cta-btn">ซื้อ</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- สินค้า 3 -->
-                    <div class="carousel-item">
-                        <div class="row align-items-center">
-                            <!-- ภาพสินค้า -->
-                            <div class="col-md-6">
-                                <img src="image/Void Amulet.png" class="img-fluid w-50" alt="Void Amulet">
-                            </div>
-                            <!-- ข้อความและปุ่ม -->
-                            <div class="col-md-6 text-start">
-                                <h5>Void Amulet</h5>
-                                <p>กล้าพอไหมที่จะเป็นเจ้าของชิ้นส่วนแห่งจักรวาลที่เกินกว่าจินตนาการของคุณ?</p>
-                                <a href="product.html" class="cta-btn">ซื้อ</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ปุ่มเลื่อนซ้าย-ขวา -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
+    <!-- Section ที่ต้องการให้จาง -->
+    <section id="section-to-fade">
+        <h1 class="fantasy-text">Saenru Shop</h1>
     </section>
 
+    <script>
+        const section = document.getElementById("section-to-fade");
 
-    <!-- Features Section -->
-    <section id="features" class="section bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">จุดเด่นสินค้าของร้าน</h2>
-            <div class="row">
+        window.addEventListener("scroll", () => {
+            // ตรวจจับการเลื่อนของหน้า
+            const scrollY = window.scrollY; // ตำแหน่งการเลื่อน
+            const height = window.innerHeight; // ความสูงของหน้าจอ
 
-                <!-- Feature 1 -->
-                <div class="col-md-4 col-sm-6 col-12">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="bi bi-speedometer" style="color: #7721e8;"></i>
+            // ย่อลงและจางลงตามการเลื่อน
+            if (scrollY < height) {
+                const scale = 1 - scrollY / height; // ลดขนาดตามตำแหน่งการเลื่อน
+                const opacity = 1 - scrollY / height; // ลดความโปร่งใส
+                section.style.transform = `scale(${scale})`; // ใช้ transform ย่อขนาด
+                section.style.opacity = opacity; // จัดการความโปร่งใส
+            }
+        });
+    </script>
+</body>
+
+<section id="header" class="section text-center bg-light">
+    <div class="container">
+        <h1>แนะนำสินค้า</h1>
+        <p>สินค้าที่จะเปลี่ยนชีวิตคุณให้ดียิ่งขึ้น</p>
+
+        <!-- Slider -->
+        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- สินค้า 1 -->
+                <div class="carousel-item active">
+                    <div class="row align-items-center">
+                        <!-- ภาพสินค้า -->
+                        <div class="col-md-6">
+                            <img src="image/Stellar Nexus.png" class="img-fluid w-50" alt="Stellar Nexus">
                         </div>
-                        <h4>พลังแห่งประสิทธิภาพดุจดวงดาว</h4>
-                        <p>สินค้าของเราเปี่ยมด้วยประสิทธิภาพเหนือระดับ ทำงานรวดเร็วและเสถียร
-                            ราวกับยานอวกาศที่โคจรรอบกาแล็กซีอย่างไร้ที่ติ</p>
+                        <!-- ข้อความและปุ่ม -->
+                        <div class="col-md-6 text-start">
+                            <h5>Stellar Nexus</h5>
+                            <p>คุณพร้อมหรือยังที่จะเป็นผู้ถือครองศูนย์กลางจักรวาลแห่งความเป็นไปไม่ได้?
+                                จงก้าวสู่โลกของสิ่งแปลกประหลาดก่อนใคร!</p>
+                            <a href="product.html" class="cta-btn">ซื้อ</a>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Feature 2 -->
-                <div class="col-md-4 col-sm-6 col-12">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="bi bi-shield-lock" style="color: #7721e8;"></i>
+                <!-- สินค้า 2 -->
+                <div class="carousel-item">
+                    <div class="row align-items-center">
+                        <!-- ภาพสินค้า -->
+                        <div class="col-md-6">
+                            <img src="image/Aether Grip.png" class="img-fluid w-50" alt="Aether Grip">
                         </div>
-                        <h4>เกราะป้องกันแห่งจักรวาล</h4>
-                        <p>มาตรการรักษาความปลอดภัยขั้นสูงดุจโล่พลังงานที่คุ้มครองยานสำรวจ
-                            ให้ข้อมูลของคุณปลอดภัยแม้อยู่ในห้วงอวกาศ</p>
+                        <!-- ข้อความและปุ่ม -->
+                        <div class="col-md-6 text-start">
+                            <h5>Aether Grip</h5>
+                            <p>ปลดล็อกขีดจำกัดของมนุษย์ด้วย AetherGrip!
+                                แขนกลอัจฉริยะที่ผสานเทคโนโลยีล้ำยุคและพลังงานแห่งอีเธอร์</p>
+                            <a href="product.html" class="cta-btn">ซื้อ</a>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Feature 3 -->
-                <div class="col-md-4 col-sm-6 col-12">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="bi bi-gear" style="color: #7721e8;"></i>
+                <!-- สินค้า 3 -->
+                <div class="carousel-item">
+                    <div class="row align-items-center">
+                        <!-- ภาพสินค้า -->
+                        <div class="col-md-6">
+                            <img src="image/Void Amulet.png" class="img-fluid w-50" alt="Void Amulet">
                         </div>
-                        <h4>ปรับแต่งได้ตามใจในห้วงมิติ</h4>
-                        <p>สามารถปรับเปลี่ยนฟังก์ชันต่าง ๆ ให้สอดคล้องกับความต้องการ ราวกับสร้างยานอวกาศในแบบของคุณเอง
-                        </p>
+                        <!-- ข้อความและปุ่ม -->
+                        <div class="col-md-6 text-start">
+                            <h5>Void Amulet</h5>
+                            <p>กล้าพอไหมที่จะเป็นเจ้าของชิ้นส่วนแห่งจักรวาลที่เกินกว่าจินตนาการของคุณ?</p>
+                            <a href="product.html" class="cta-btn">ซื้อ</a>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Feature 4 -->
-                <div class="col-md-4 col-sm-6 col-12">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="bi bi-laptop" style="color: #7721e8;"></i>
-                        </div>
-                        <h4>รองรับทุกอุปกรณ์ในจักรวาล</h4>
-                        <p>ใช้งานได้ทุกที่ทุกเวลา ไม่ว่าคุณจะอยู่บนดาวเคราะห์ดวงใด รองรับทั้งบนมือถือ แท็บเล็ต
-                            และคอมพิวเตอร์</p>
-                    </div>
-                </div>
-
-                <!-- Feature 5 -->
-                <div class="col-md-4 col-sm-6 col-12">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="bi bi-palette" style="color: #7721e8;"></i>
-                        </div>
-                        <h4>ดีไซน์ล้ำยุคแห่งกาแล็กซี</h4>
-                        <p>การออกแบบที่ทันสมัยและใช้งานง่าย ราวกับแสงจากดาวฤกษ์ที่นำทาง</p>
-                    </div>
-                </div>
-
-                <!-- Feature 6 -->
-                <div class="col-md-4 col-sm-6 col-12">
-                    <div class="feature-box">
-                        <div class="feature-icon">
-                            <i class="bi bi-people" style="color: #7721e8;"></i>
-                        </div>
-                        <h4>พันธมิตรแห่งดวงดาว</h4>
-                        <p>ทีมงานผู้เชี่ยวชาญพร้อมดูแลคุณตลอด 24 ชั่วโมง ไม่ว่าจะอยู่ส่วนไหนของจักรวาล
-                            เราพร้อมเคียงข้างคุณ!</p>
-                    </div>
-                </div>
-
             </div>
+
+            <!-- ปุ่มเลื่อนซ้าย-ขวา -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-    </section>
-
-    <!-- Optional Testimonial Section -->
-    <div class="container mt-5">
-        <div class="d-flex justify-content-center py-3">
-
-            <div class="mr-2">
-                <div class="card">
-                    <div class="px-2 py-2">
-                        <span class="maintxt">"Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore magna aliqua."</span>
-                        <div class="d-flex pt-3">
-                            <div><img src="https://i.imgur.com/hczKIze.jpg" width="50" class="rounded-circle"></div>
-                            <div class="ml-2">
-                                <span class="name">Dan Spratling</span>
-                                <p class="para">Company name</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-
-                <div class="card mt-3">
-                    <div class="px-2 py-2">
-                        <span class="maintxt">"Lorem ipsum dolor sit amet,consectetur adipiscing elit."</span>
-                        <div class="d-flex pt-3">
-                            <div><img src="https://i.imgur.com/hczKIze.jpg" width="50" class="rounded-circle"></div>
-                            <div class="ml-2">
-                                <span class="name">Dan Spratling</span>
-                                <p class="para">Company name</p>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-
-
-
-            </div>
-            <div class="ml-2">
-
-                <div class="card">
-                    <div class="px-2 py-2">
-                        <span class="maintxt">"Lorem ipsum dolor sit amet,consectetur adipiscing elit."</span>
-                        <div class="d-flex pt-3">
-                            <div><img src="https://i.imgur.com/hczKIze.jpg" width="50" class="rounded-circle"></div>
-                            <div class="ml-2">
-                                <span class="name">Dan Spratling</span>
-                                <p class="para">Company name</p>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-
-
-                <div class="card mt-3">
-                    <div class="px-2 py-2">
-                        <span class="maintxt">"Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore magna aliqua."</span>
-                        <div class="d-flex pt-3">
-                            <div><img src="https://i.imgur.com/hczKIze.jpg" width="50" class="rounded-circle"></div>
-                            <div class="ml-2">
-                                <span class="name">Dan Spratling</span>
-                                <p class="para">Company name</p>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-
-            </div>
-
-
-
-        </div>
-
     </div>
+</section>
 
-    <!-- Social Media Links -->
-    <section id="social-links" class="bg-dark py-4">
-        <div class="container text-center">
-            <h3 class="text-white mb-4">Contact us</h3>
-            <div class="d-flex justify-content-center align-items-center">
-                <!-- Facebook Icon -->
-                <a href="https://facebook.com" class="text-white mx-3" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-                        alt="Facebook" class="icon-img" style="width: 30px; height: 30px;">
-                </a>
 
-                <!-- X (Twitter) Icon -->
-                <a href="https://x.com/" class="text-white mx-3" target="_blank">
-                    <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg"
-                        alt="X" class="icon-img" style="width: 30px; height: 30px;">
-                </a>
+<!-- Features Section -->
+<section id="features" class="section bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">จุดเด่นสินค้าของร้าน</h2>
+        <div class="row">
 
-                <!-- Instagram Icon -->
-                <a href="https://instagram.com" class="text-white mx-3" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
-                        class="icon-img" style="width: 30px; height: 30px;">
-                </a>
+            <!-- Feature 1 -->
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="bi bi-speedometer" style="color: #7721e8;"></i>
+                    </div>
+                    <h4>พลังแห่งประสิทธิภาพดุจดวงดาว</h4>
+                    <p>สินค้าของเราเปี่ยมด้วยประสิทธิภาพเหนือระดับ ทำงานรวดเร็วและเสถียร
+                        ราวกับยานอวกาศที่โคจรรอบกาแล็กซีอย่างไร้ที่ติ</p>
+                </div>
+            </div>
 
-                <!-- Gmail Icon -->
-                <a href="mailto:example@gmail.com" class="text-white mx-3">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png"
-                        alt="Gmail" class="icon-img" style="width: 30px; height: 30px;">
-                </a>
+            <!-- Feature 2 -->
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="bi bi-shield-lock" style="color: #7721e8;"></i>
+                    </div>
+                    <h4>เกราะป้องกันแห่งจักรวาล</h4>
+                    <p>มาตรการรักษาความปลอดภัยขั้นสูงดุจโล่พลังงานที่คุ้มครองยานสำรวจ
+                        ให้ข้อมูลของคุณปลอดภัยแม้อยู่ในห้วงอวกาศ</p>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="bi bi-gear" style="color: #7721e8;"></i>
+                    </div>
+                    <h4>ปรับแต่งได้ตามใจในห้วงมิติ</h4>
+                    <p>สามารถปรับเปลี่ยนฟังก์ชันต่าง ๆ ให้สอดคล้องกับความต้องการ ราวกับสร้างยานอวกาศในแบบของคุณเอง
+                    </p>
+                </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="bi bi-laptop" style="color: #7721e8;"></i>
+                    </div>
+                    <h4>รองรับทุกอุปกรณ์ในจักรวาล</h4>
+                    <p>ใช้งานได้ทุกที่ทุกเวลา ไม่ว่าคุณจะอยู่บนดาวเคราะห์ดวงใด รองรับทั้งบนมือถือ แท็บเล็ต
+                        และคอมพิวเตอร์</p>
+                </div>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="bi bi-palette" style="color: #7721e8;"></i>
+                    </div>
+                    <h4>ดีไซน์ล้ำยุคแห่งกาแล็กซี</h4>
+                    <p>การออกแบบที่ทันสมัยและใช้งานง่าย ราวกับแสงจากดาวฤกษ์ที่นำทาง</p>
+                </div>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="col-md-4 col-sm-6 col-12">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <i class="bi bi-people" style="color: #7721e8;"></i>
+                    </div>
+                    <h4>พันธมิตรแห่งดวงดาว</h4>
+                    <p>ทีมงานผู้เชี่ยวชาญพร้อมดูแลคุณตลอด 24 ชั่วโมง ไม่ว่าจะอยู่ส่วนไหนของจักรวาล
+                        เราพร้อมเคียงข้างคุณ!</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<!-- Optional Testimonial Section -->
+<div class="section bg-light">
+    <div class="d-flex justify-content-center py-3">
+        <div class="mr-2">
+            <div class="card">
+                <div class="px-2 py-2">
+                    <span class="maintxt">"Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore magna aliqua."</span>
+                    <div class="d-flex pt-3">
+                        <div><img src="image/guy1.jpg" width="50" class="rounded-circle"></div>
+                        <div class="ml-2">
+                            <span class="name">Dan Spratling</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-3">
+                <div class="px-2 py-2">
+                    <span class="maintxt">"Lorem ipsum dolor sit amet,consectetur adipiscing elit."</span>
+                    <div class="d-flex pt-3">
+                        <div><img src="image/girl3.jpg" width="50" class="rounded-circle"></div>
+                        <div class="ml-2">
+                            <span class="name">Dan Spratling</span>
+                            <p class="para">Company name</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+        <div class="ml-2">
+            <div class="card">
+                <div class="px-2 py-2">
+                    <span class="maintxt">"Lorem ipsum dolor sit amet,consectetur adipiscing elit."</span>
+                    <div class="d-flex pt-3">
+                        <div><img src="image/girl2.jpg" width="50" class="rounded-circle"></div>
+                        <div class="ml-2">
+                            <span class="name">Dan Spratling</span>
+                            <p class="para">Company name</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-3">
+                <div class="px-2 py-2">
+                    <span class="maintxt">"Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore magna aliqua."</span>
+                    <div class="d-flex pt-3">
+                        <div><img src="image/girl1.jpg" width="50" class="rounded-circle"></div>
+                        <div class="ml-2">
+                            <span class="name">Dan Spratling</span>
+                            <p class="para">Company name</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <!-- Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Social Media Links -->
+<section id="social-links" class="bg-dark py-4">
+    <div class="container text-center">
+        <h3 class="text-white mb-4">Contact us</h3>
+        <div class="d-flex justify-content-center align-items-center">
+            <!-- Facebook Icon -->
+            <a href="https://facebook.com" class="text-white mx-3" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                    alt="Facebook" class="icon-img" style="width: 30px; height: 30px;">
+            </a>
+
+            <!-- X (Twitter) Icon -->
+            <a href="https://x.com/" class="text-white mx-3" target="_blank">
+                <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg"
+                    alt="X" class="icon-img" style="width: 30px; height: 30px;">
+            </a>
+
+            <!-- Instagram Icon -->
+            <a href="https://instagram.com" class="text-white mx-3" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
+                    class="icon-img" style="width: 30px; height: 30px;">
+            </a>
+
+            <!-- Gmail Icon -->
+            <a href="mailto:example@gmail.com" class="text-white mx-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png"
+                    alt="Gmail" class="icon-img" style="width: 30px; height: 30px;">
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </body>
 

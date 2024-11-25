@@ -11,3 +11,5 @@ function handleSelect(selectElement, brandIndex) {
     const selectedPackagesJson = selectElement.value;
     showPackages(selectedPackagesJson);
 }
+
+

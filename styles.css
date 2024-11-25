@@ -1,12 +1,38 @@
 body {
-    background-color: #212529;
+    background: url('image/WallpeperH.jpg') no-repeat center center fixed;
+    background-size: cover; /* ปรับภาพให้ครอบคลุมพื้นที่ทั้งหมด */
     color: white;
     height: 100%;
     margin: 0;
 }
+#section-to-fade {
+    background: url('image/Shopland-removebg.png') no-repeat center center;
+    background-size: contain; /* ปรับขนาดภาพให้พอดีโดยแสดงทั้งหมด */
+    color: white;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#sectioneiei{
+    background: url('image/Shopland-removebg.png') no-repeat center center;
+    background-size: contain; /* ปรับขนาดภาพให้พอดีโดยแสดงทั้งหมด */
+    color: white;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    text-align: center;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
 
 .card {
-    background-color: #121212;
+    background-color: #1a1a1a;
     border: none;
     color: white;
 }
@@ -16,13 +42,11 @@ body {
     transform: scale(1.05);
     transition: 0.3s;
 }
-
 /*button ซื้อเลย*/
 .choose-btn {
     background-color: #198754;
     color: white;
 }
-
 /*button ซื้อเลย เปลียนสี*/
 .choose-btn:hover {
     background-color: #145a32;
@@ -30,7 +54,7 @@ body {
 
 /*ภาพพื้นหลังheader*/
 .custom-navbar {
-    background: url('image/WallpeperH.jpg') no-repeat center center;
+    background-color: rgba(255, 255, 255, 0.5); /* สีขาวโปร่งแสง */
     background-size: cover;
     background-attachment: fixed;
     height: auto;
@@ -49,12 +73,20 @@ body {
 }
 
 
+.icon-img {
+    transition: transform 0.s ease-in-out; /* เพิ่ม transition smooth */
+}
+.icon-img:hover {
+    transform: translateY(-10px) scale(1.2); /* ขยายขนาดขึ้น 20% */
+}
+
+
+
 /*ตัวแบ่ง*/
 
 .section {
     padding: 60px 0;
 }
-
 /*ตัวแบ่ง*/
 
 
@@ -74,12 +106,13 @@ body {
     padding: 20px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease-in-out;
+    margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างกล่องในแนวตั้ง */
 }
+
 
 .feature-box:hover {
     transform: scale(1.05);
 }
-
 /* feature*/
 
 .container222 {
@@ -92,6 +125,19 @@ body {
     /* Center horizontally */
     align-items: center;
     /* Center vertically */
+}
+
+.nav-link {
+    color: #ffffff; /* สีฟอนต์ */
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.6); /* เพิ่มแสงให้ข้อความ */
+}
+
+.nav-link:hover {
+    font-family: 'Cinzel', serif;  /* Apply the 'Cinzel' fantasy font */
+    font-size: 4rem;  /* Adjust the font size as needed */
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.7);  /* Optional: Add a text shadow for effect */
+    color: #ffcc00;  /* Adjust text color for better visibility */
+    letter-spacing: 2px; /* เพิ่มแสงมากขึ้นเมื่อชี้เมาส์ */
 }
 
 .maintxt {
@@ -116,15 +162,10 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
 
 /* Apply the font to the .fantasy-text class */
-#section-to-fade .fantasy-text {
-    font-family: 'Cinzel', serif;
-    /* Apply the 'Cinzel' fantasy font */
-    font-size: 4rem;
-    /* Adjust the font size as needed */
-    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.7);
-    /* Optional: Add a text shadow for effect */
-    color: #ffcc00;
-    /* Adjust text color for better visibility */
-    letter-spacing: 2px;
-    /* Optional: Add spacing between letters for dramatic effect */
+.fantasy-text {
+    font-family: 'Cinzel', serif;  /* Apply the 'Cinzel' fantasy font */
+    font-size: 4rem;  /* Adjust the font size as needed */
+    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.7);  /* Optional: Add a text shadow for effect */
+    color: #ffcc00;  /* Adjust text color for better visibility */
+    letter-spacing: 2px;  /* Optional: Add spacing between letters for dramatic effect */
 }
