@@ -13,3 +13,22 @@ function handleSelect(selectElement, brandIndex) {
 }
 
 
+// เลือกปุ่ม
+const backToTop = document.getElementById('backToTop');
+
+// แสดง/ซ่อนปุ่มเมื่อเลื่อน
+window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTop.style.display = "block"; // แสดงปุ่มเมื่อเลื่อนเกิน 100px
+    } else {
+        backToTop.style.display = "none"; // ซ่อนปุ่ม
+    }
+};
+
+// ฟังก์ชันเลื่อนกลับไปข้างบน
+backToTop.onclick = function () {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // เลื่อนแบบนุ่มนวล
+    });
+};

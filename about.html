@@ -16,7 +16,7 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark custom-navbar">
+    <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="image/logo.png" alt="Logo" style="height: 60px;">
@@ -25,12 +25,14 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Header</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimonial">Testimonial</a></li>
-                    <li class="nav-item"><a class="nav-link" href="product.html">Product</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#Testimonial">Testimonial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="product.html">Shop</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
                     <li class="nav-item">
                         <a href="#" class="btn btn-outline-light me-2" onclick="showAlert('Login')">Login</a>
@@ -42,7 +44,6 @@
                                 alert(`กำลังดำเนินการ: ${action}\nกรุณารอก่อนนะ!`);
                             }
                         </script>
-
                 </ul>
             </div>
         </div>
@@ -96,13 +97,45 @@
                 <!-- Feature 1 -->
                 <div class="col-md-6 col-sm-8 col-12">
                     <p>
-                        Seanru Shop เป็นร้านค้าที่ก่อตั้งโดย นายปฏิภาณ เมาโหมด และ นายธีรเดช ฟักทอง
+                        Seanru Shop เป็นร้านค้าที่ก่อตั้งโดย นายปฏิภาณ เมาโหมด และนายธีรเดช ฟักทอง
                         ทั้งสองมีความหลงใหลในวิทยาศาสตร์และเทคโนโลยี
-                        จึงตั้งเป้าหมายที่จะนำสินค้าคุณภาพจากโลกไปสู่จักรวาล
-                        Seanru Shop ยังเป็นจุดเชื่อมโยงการค้าระหว่างดาวหลายดวง
+                        จึงตั้งเป้าหมายที่จะนำสินค้าคุณภาพจากทุกๆทีจักรวาลไปสู่
+                        Seanru Shop เป็นจุดเชื่อมโยงการค้าระหว่างดาวหลายดวง
                         และมุ่งมั่นสร้างธุรกิจที่ยั่งยืนในระดับจักรวาล
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="social-links" class="bg-dark py-4">
+        <div class="container text-center">
+            <h3 class="text-white mb-4">Contact us</h3>
+            <div class="d-flex justify-content-center align-items-center">
+                <!-- Facebook Icon -->
+                <a href="https://facebook.com" class="text-white mx-3" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                        alt="Facebook" class="icon-img" style="width: 30px; height: 30px;">
+                </a>
+    
+                <!-- X (Twitter) Icon -->
+                <a href="https://x.com/" class="text-white mx-3" target="_blank">
+                    <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg"
+                        alt="X" class="icon-img" style="width: 30px; height: 30px;">
+                </a>
+    
+                <!-- Instagram Icon -->
+                <a href="https://instagram.com" class="text-white mx-3" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
+                        class="icon-img" style="width: 30px; height: 30px;">
+                </a>
+    
+                <!-- Gmail Icon -->
+                <a href="mailto:example@gmail.com" class="text-white mx-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png"
+                        alt="Gmail" class="icon-img" style="width: 30px; height: 30px;">
+                </a>
             </div>
         </div>
     </section>

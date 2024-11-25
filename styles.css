@@ -1,13 +1,16 @@
 body {
     background: url('image/WallpeperH.jpg') no-repeat center center fixed;
-    background-size: cover; /* ปรับภาพให้ครอบคลุมพื้นที่ทั้งหมด */
+    background-size: cover;
+    /* ปรับภาพให้ครอบคลุมพื้นที่ทั้งหมด */
     color: white;
     height: 100%;
     margin: 0;
 }
+
 #section-to-fade {
     background: url('image/Shopland-removebg.png') no-repeat center center;
-    background-size: contain; /* ปรับขนาดภาพให้พอดีโดยแสดงทั้งหมด */
+    background-size: contain;
+    /* ปรับขนาดภาพให้พอดีโดยแสดงทั้งหมด */
     color: white;
     height: 70vh;
     display: flex;
@@ -19,9 +22,12 @@ body {
 }
 
 #section-to-fade:hover {
-    transform: scale(1.2); /* ขยายขนาดให้ใหญ่ขึ้น 20% */
-    font-size: 15rem; /* เพิ่มขนาดฟอนต์ */
-    height: 100vh; /* ปรับขนาดความสูง */
+    transform: scale(1.2);
+    /* ขยายขนาดให้ใหญ่ขึ้น 20% */
+    font-size: 15rem;
+    /* เพิ่มขนาดฟอนต์ */
+    height: 100vh;
+    /* ปรับขนาดความสูง */
 }
 
 
@@ -38,11 +44,13 @@ body {
     transform: scale(1.05);
     transition: 0.3s;
 }
+
 /*button ซื้อเลย*/
 .choose-btn {
     background-color: #198754;
     color: white;
 }
+
 /*button ซื้อเลย เปลียนสี*/
 .choose-btn:hover {
     background-color: #145a32;
@@ -50,45 +58,60 @@ body {
 
 /*ภาพพื้นหลังheader*/
 .custom-navbar {
-    background-color: rgba(255, 255, 255, 0.5); /* สีขาวโปร่งแสง */
+    background-color: rgba(255, 255, 255, 0.5);
+    /* สีขาวโปร่งแสง */
     background-size: cover;
     background-attachment: fixed;
     height: auto;
 }
 
 .cta-btn {
-    background: linear-gradient(135deg, #3f51b5, #303f9f); /* ไล่สีจากม่วงไปฟ้า */
+    background: linear-gradient(135deg, #3f51b5, #303f9f);
+    /* ไล่สีจากม่วงไปฟ้า */
     color: white;
     padding: 12px 30px;
     font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     border: none;
-    border-radius: 30px; /* ทำให้ปุ่มมุมโค้งมน */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* เงาเบา ๆ */
-    transition: all 0.3s ease-in-out; /* การเปลี่ยนแปลงที่นุ่มนวล */
-    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อชี้ไปที่ปุ่ม */
-    text-decoration: none; /* ลบขีดเส้นใต้จากลิงก์ */
+    border-radius: 30px;
+    /* ทำให้ปุ่มมุมโค้งมน */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    /* เงาเบา ๆ */
+    transition: all 0.3s ease-in-out;
+    /* การเปลี่ยนแปลงที่นุ่มนวล */
+    cursor: pointer;
+    /* เปลี่ยนเคอร์เซอร์เมื่อชี้ไปที่ปุ่ม */
+    text-decoration: none;
+    /* ลบขีดเส้นใต้จากลิงก์ */
 }
 
 .cta-btn:hover {
-    background: linear-gradient(135deg, #2c387e, #3f51b5); /* เปลี่ยนไล่สีเมื่อ hover */
-    transform: scale(1.05); /* ขยายขนาดเล็ก ๆ เมื่อ hover */
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4); /* เพิ่มเงาเมื่อ hover */
+    background: linear-gradient(135deg, #2c387e, #3f51b5);
+    /* เปลี่ยนไล่สีเมื่อ hover */
+    transform: scale(1.05);
+    /* ขยายขนาดเล็ก ๆ เมื่อ hover */
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.4);
+    /* เพิ่มเงาเมื่อ hover */
 }
 
 .cta-btn:active {
-    transform: scale(0.98); /* ลดขนาดลงเมื่อคลิก */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* ลดเงาเมื่อคลิก */
+    transform: scale(0.98);
+    /* ลดขนาดลงเมื่อคลิก */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    /* ลดเงาเมื่อคลิก */
 }
 
 
 
 .icon-img {
-    transition: transform 0.s ease-in-out; /* เพิ่ม transition smooth */
+    transition: transform 0.s ease-in-out;
+    /* เพิ่ม transition smooth */
 }
+
 .icon-img:hover {
-    transform: translateY(-10px) scale(1.2); /* ขยายขนาดขึ้น 20% */
+    transform: translateY(-10px) scale(1.2);
+    /* ขยายขนาดขึ้น 20% */
 }
 
 
@@ -98,6 +121,7 @@ body {
 .section {
     padding: 100px 0;
 }
+
 /*ตัวแบ่ง*/
 
 
@@ -117,14 +141,18 @@ body {
     padding: 20px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease-in-out;
-    margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างกล่องในแนวตั้ง */
+    margin-bottom: 20px;
+    /* เพิ่มระยะห่างระหว่างกล่องในแนวตั้ง */
 }
 
 
 .feature-box:hover {
-    transform: scale(0.95); /* ขนาดลดลงเมื่อคลิก */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ลดเงาเมื่อคลิก */
+    transform: scale(0.95);
+    /* ขนาดลดลงเมื่อคลิก */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* ลดเงาเมื่อคลิก */
 }
+
 /* feature*/
 
 .container222 {
@@ -143,16 +171,22 @@ body {
 
 
 .nav-link {
-    font-family: 'Cinzel', serif; 
-    font-size: 1.5rem; 
-    text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.7); 
-    color: #000000;  
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.7);
+    color: #000000;
     letter-spacing: 1px;
 }
 
 .nav-link:hover {
     color: #ffffff;
-    transform: scale(1.5); /* ขยายขนาดเมื่อ hover */
+    transform: scale(1.5);
+    /* ขยายขนาดเมื่อ hover */
+}
+
+.header-to {
+    position: relative;
+    height: 100px;
 }
 
 
@@ -162,18 +196,18 @@ body {
 
 
 .maintxt {
-    font-family: 'Cinzel', serif; 
-    font-size: 1.5rem; 
-    text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.7); 
-    color: #ffffff;  
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.7);
+    color: #ffffff;
     letter-spacing: 1px;
 }
 
 .maintxt2 {
-    font-family: 'Cinzel', serif; 
-    font-size: 3rem; 
-    text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.7); 
-    color: #ffffff;  
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.7);
+    color: #ffffff;
     letter-spacing: 1px;
 }
 
@@ -192,19 +226,46 @@ body {
 }
 
 .name12 {
-    color: #ffcc00; /* สีเขียว */
-    font-size: 18px; /* ขนาดตัวอักษร */
-    font-weight: bold; /* ทำตัวหนา */
-    font-family: "Arial", sans-serif; /* แบบตัวอักษร */
+    color: #ffcc00;
+    /* สีเขียว */
+    font-size: 18px;
+    /* ขนาดตัวอักษร */
+    font-weight: bold;
+    /* ทำตัวหนา */
+    font-family: "Arial", sans-serif;
+    /* แบบตัวอักษร */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
 
 .fantasy-text {
-    font-family: 'Cinzel', serif; 
-    font-size: 10rem; 
-    text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.7); 
-    color: #000000;  
-    letter-spacing: 1px;  
+    font-family: 'Cinzel', serif;
+    font-size: 10rem;
+    text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.7);
+    color: #000000;
+    letter-spacing: 1px;
 }
 
+
+#backToTop {
+    position: fixed; /* ติดตามหน้าจอ */
+    bottom: 20px; /* ระยะห่างจากขอบล่าง */
+    right: 20px; /* ระยะห่างจากขอบขวา */
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    display: none; /* ซ่อนปุ่มไว้ก่อน */
+}
+
+/* เปลี่ยนสีเมื่อเอาเมาส์ไปวาง */
+#backToTop:hover {
+    background-color: #45a049;
+}
