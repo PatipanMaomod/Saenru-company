@@ -15,19 +15,7 @@ body {
     justify-content: center;
     font-size: 2rem;
     text-align: center;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-#sectioneiei{
-    background: url('image/Shopland-removebg.png') no-repeat center center;
-    background-size: contain; /* ปรับขนาดภาพให้พอดีโดยแสดงทั้งหมด */
-    color: white;
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    text-align: center;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 
@@ -171,8 +159,9 @@ body {
 /* Apply the font to the .fantasy-text class */
 .fantasy-text {
     font-family: 'Cinzel', serif;  /* Apply the 'Cinzel' fantasy font */
-    font-size: 4rem;  /* Adjust the font size as needed */
+    font-size: 2rem;  /* Adjust the font size to make the text smaller */
     text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.7);  /* Optional: Add a text shadow for effect */
     color: #ffcc00;  /* Adjust text color for better visibility */
-    letter-spacing: 2px;  /* Optional: Add spacing between letters for dramatic effect */
+    letter-spacing: 1px;  /* Optional: Add spacing between letters for dramatic effect */
 }
+
