@@ -107,7 +107,8 @@ body {
 
 
 .feature-box:hover {
-    transform: scale(1.05);
+    transform: scale(0.95); /* ขนาดลดลงเมื่อคลิก */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ลดเงาเมื่อคลิก */
 }
 /* feature*/
 
@@ -123,23 +124,33 @@ body {
     /* Center vertically */
 }
 
+
+
+
 .nav-link {
-    color: #ffffff; /* สีฟอนต์ */
-    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.6); /* เพิ่มแสงให้ข้อความ */
+    font-family: 'Cinzel', serif; 
+    font-size: 1.5rem; 
+    text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.7); 
+    color: #000000;  
+    letter-spacing: 1px;
 }
 
 .nav-link:hover {
-    font-family: 'Cinzel', serif;  /* Apply the 'Cinzel' fantasy font */
-    font-size: 4rem;  /* Adjust the font size as needed */
-    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.7);  /* Optional: Add a text shadow for effect */
-    color: #ffcc00;  /* Adjust text color for better visibility */
-    letter-spacing: 2px; /* เพิ่มแสงมากขึ้นเมื่อชี้เมาส์ */
+    color: #fff;
+    transform: scale(1.5); /* ขยายขนาดเมื่อ hover */
 }
 
+
+
+
+
+
 .maintxt {
-    color: #ffffff;
-    font-weight: 500;
-    font-size: 14.5px;
+    font-family: 'Cinzel', serif; 
+    font-size: 1.5rem; 
+    text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.7); 
+    color: #ffffff;  
+    letter-spacing: 1px;
 }
 
 .name {
