@@ -22,7 +22,7 @@ body {
 }
 
 #section-to-fade:hover {
-    transform: scale(1.2);
+    transform: scale(1);
     /* ขยายขนาดให้ใหญ่ขึ้น 20% */
     font-size: 12rem;
     /* เพิ่มขนาดฟอนต์ */
@@ -334,3 +334,14 @@ body {
     opacity: 0.8;
 }
 
+.back-button {
+    position: absolute;  /* หรือใช้ fixed ถ้าต้องการให้ปุ่มคงที่ */
+    top: 20px;           /* ระยะห่างจากขอบบน */
+    left: 20px;          /* ระยะห่างจากขอบซ้าย */
+    font-size: 24px;     /* ขนาดของไอคอน */
+    color: #333;         /* สีของไอคอน */
+  }
+
+  .back-button:hover {
+    color: #007bff;  /* เปลี่ยนสีเมื่อ hover */
+  }
