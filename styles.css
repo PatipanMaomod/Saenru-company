@@ -172,3 +172,31 @@ body {
     letter-spacing: 1px;  
 }
 
+.btn-buy {
+    background-color: #3eff65;  /* สีพื้นหลัง */
+    color: white;  /* สีตัวอักษร */
+    border: none;  /* ไม่มีขอบ */
+    padding: 12px 30px;  /* ขนาดปุ่ม */
+    font-size: 16px;  /* ขนาดตัวอักษร */
+    font-weight: bold;  /* ตัวอักษรหนา */
+    border-radius: 50px;  /* ขอบปุ่มมน */
+    transition: background-color 0.3s, transform 0.2s ease;  /* เอฟเฟกต์การเปลี่ยนสีและขยายขนาด */
+    text-transform: uppercase;  /* ตัวอักษรทั้งหมดเป็นตัวพิมพ์ใหญ่ */
+}
+
+.btn-buy:hover {
+    background-color: #019f21;  /* สีที่เปลี่ยนไปเมื่อ hover */
+    transform: translateY(-5px);  /* ปุ่มขยับขึ้นเล็กน้อย */
+}
+
+.btn-buy:active {
+    background-color: #055515;  /* สีเมื่อคลิก */
+    transform: translateY(2px);  /* ขยับลงเมื่อคลิก */
+}
+
+.btn-buy:focus {
+    outline: none;  /* ลบเส้นขอบเมื่อโฟกัส */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);  /* เพิ่มเงาให้ปุ่มเมื่อโฟกัส */
+}
+
+
