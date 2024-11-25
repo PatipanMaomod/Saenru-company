@@ -9,14 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <!-- Optional: Add Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-    
     <button id="backToTop"></button>
     <section>
         <!-- Navbar -->
@@ -38,17 +35,20 @@
                         <li class="nav-item"><a class="nav-link" href="index.html#Testimonial">Testimonial</a></li>
                         <li class="nav-item"><a class="nav-link" href="product.html">Shop</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-                        <li class="nav-item">
-                            <a href="login.html" class="btn btn-outline-light me-2">Login</a>
-                            <a href="register.html" class="btn" style="background-color: #930fc8; color: white;">Register</a>
-                            
+                        <li class="nav-item ms-3">
+                            <a href="login.html" class="btn btn-outline-light me-2"
+                                onclick="showAlert('Login')">Login</a>
+                            <a href="register.html" class="btn btn-outline"
+                                style="background-color: #953232; color: white; transition: background-color 0.3s, color 0.3s;"
+                                onmouseover="this.style.backgroundColor='#bf4848'; this.style.color='white';"
+                                onmouseout="this.style.backgroundColor='#953232'; this.style.color='white';"
+                                onclick="showAlert('Register')">Register</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </section>
-
-
 
     <section id="home">
         <div id="section-to-fade">
@@ -59,81 +59,63 @@
         </div>
     </section>
 
-    <script>
-        const section = document.getElementById("section-to-fade");
-
-        window.addEventListener("scroll", () => {
-            // ตรวจจับการเลื่อนของหน้า
-            const scrollY = window.scrollY; // ตำแหน่งการเลื่อน
-            const height = window.innerHeight; // ความสูงของหน้าจอ
-
-            // ย่อลงและจางลงตามการเลื่อน
-            if (scrollY < height) {
-                const scale = 1 - scrollY / height; // ลดขนาดตามตำแหน่งการเลื่อน
-                const opacity = 1 - scrollY / height; // ลดความโปร่งใส
-                section.style.transform = `scale(${scale})`; // ใช้ transform ย่อขนาด
-                section.style.opacity = opacity; // จัดการความโปร่งใส
-            }
-        });
-    </script>
-
 
     <section id="header" class="section text-center bg-light">
         <div class="container">
             <h1 class="maintxt2">แนะนำสินค้า</h1>
             <p class="maintxt">สินค้าที่จะเปลี่ยนชีวิตคุณให้ดียิ่งขึ้น</p>
 
-        <!-- Slider -->
-        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- สินค้า 1 -->
-                <div class="carousel-item active">
-                    <div class="row align-items-center">
-                        <!-- ภาพสินค้า -->
-                        <div class="col-md-6">
-                            <img src="image/Stellar Nexus.png" class="img-fluid w-50" alt="Stellar Nexus">
+            <!-- Slider -->
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- สินค้า 1 -->
+                    <div class="carousel-item active">
+                        <div class="row align-items-center">
+                            <!-- ภาพสินค้า -->
+                            <div class="col-md-6">
+                                <img src="image/Stellar Nexus.png" class="img-fluid w-50" alt="Stellar Nexus">
+                            </div>
+                            <!-- ข้อความและปุ่ม -->
+                            <div class="col-md-6 text-start">
+                                <h5>Stellar Nexus</h5>
+                                <p>คุณพร้อมหรือยังที่จะเป็นผู้ถือครองศูนย์กลางจักรวาลแห่งความเป็นไปไม่ได้?
+                                    จงก้าวสู่โลกของสิ่งแปลกประหลาดก่อนใคร!</p>
+                                <a href="product.html" class="cta-btn">ซื้อ</a>
+                            </div>
                         </div>
-                        <!-- ข้อความและปุ่ม -->
-                        <div class="col-md-6 text-start">
-                            <h5>Stellar Nexus</h5>
-                            <p>คุณพร้อมหรือยังที่จะเป็นผู้ถือครองศูนย์กลางจักรวาลแห่งความเป็นไปไม่ได้?
-                                จงก้าวสู่โลกของสิ่งแปลกประหลาดก่อนใคร!</p>
-                            <a href="product.html" class="cta-btn">ซื้อ</a>
+                    </div>
+                    <!-- สินค้า 2 -->
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <!-- ภาพสินค้า -->
+                            <div class="col-md-6">
+                                <img src="image/Aether Grip.png" class="img-fluid w-50" alt="Aether Grip">
+                            </div>
+                            <!-- ข้อความและปุ่ม -->
+                            <div class="col-md-6 text-start">
+                                <h5>Aether Grip</h5>
+                                <p>ปลดล็อกขีดจำกัดของมนุษย์ด้วย AetherGrip!
+                                    แขนกลอัจฉริยะที่ผสานเทคโนโลยีล้ำยุคและพลังงานแห่งอีเธอร์</p>
+                                <a href="product.html" class="cta-btn">ซื้อ</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- สินค้า 3 -->
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <!-- ภาพสินค้า -->
+                            <div class="col-md-6">
+                                <img src="image/Void Amulet.png" class="img-fluid w-50" alt="Void Amulet">
+                            </div>
+                            <!-- ข้อความและปุ่ม -->
+                            <div class="col-md-6 text-start">
+                                <h5>Void Amulet</h5>
+                                <p>กล้าพอไหมที่จะเป็นเจ้าของชิ้นส่วนแห่งจักรวาลที่เกินกว่าจินตนาการของคุณ?</p>
+                                <a href="product.html" class="cta-btn">ซื้อ</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- สินค้า 2 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <!-- ภาพสินค้า -->
-                        <div class="col-md-6">
-                            <img src="image/Aether Grip.png" class="img-fluid w-50" alt="Aether Grip">
-                        </div>
-                        <!-- ข้อความและปุ่ม -->
-                        <div class="col-md-6 text-start">
-                            <h5>Aether Grip</h5>
-                            <p>ปลดล็อกขีดจำกัดของมนุษย์ด้วย AetherGrip!
-                                แขนกลอัจฉริยะที่ผสานเทคโนโลยีล้ำยุคและพลังงานแห่งอีเธอร์</p>
-                            <a href="product.html" class="cta-btn">ซื้อ</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- สินค้า 3 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <!-- ภาพสินค้า -->
-                        <div class="col-md-6">
-                            <img src="image/Void Amulet.png" class="img-fluid w-50" alt="Void Amulet">
-                        </div>
-                        <!-- ข้อความและปุ่ม -->
-                        <div class="col-md-6 text-start">
-                            <h5>Void Amulet</h5>
-                            <p>กล้าพอไหมที่จะเป็นเจ้าของชิ้นส่วนแห่งจักรวาลที่เกินกว่าจินตนาการของคุณ?</p>
-                            <a href="product.html" class="cta-btn">ซื้อ</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
                 <!-- ปุ่มเลื่อนซ้าย-ขวา -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel"
