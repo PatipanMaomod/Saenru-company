@@ -32,3 +32,18 @@ backToTop.onclick = function () {
         behavior: 'smooth' // เลื่อนแบบนุ่มนวล
     });
 };
+document.addEventListener('mousemove', function(e) {
+    const mouseCircle = document.getElementById('mouseCircle');
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+
+    // ตั้งตำแหน่งของวงกลมตามตำแหน่งเมาส์
+    mouseCircle.style.left = mouseX + 'px'; 
+    mouseCircle.style.top = mouseY + 'px'; 
+    
+    // เพิ่มขนาดของวงกลมเมื่อเมาส์เคลื่อนที่
+    const circleSize = Math.max(50, Math.min(150, Math.abs(e.clientX - window.innerWidth / 2) / 2));
+    mouseCircle.style.width = circleSize + 'px';
+    mouseCircle.style.height = circleSize + 'px';
+});
+

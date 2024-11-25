@@ -13,48 +13,40 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 
-  
-
 </head>
 
 <body>
+    
+    <button id="backToTop"></button>
+    <section>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="image/logo.png" alt="Logo" style="height: 60px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <button id="backToTop">
-        <img src="https://via.placeholder.com/50x50.png" alt="Back to Top">
-    </button>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="image/logo.png" alt="Logo" style="height: 60px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#Testimonial">Testimonial</a></li>
-                    <li class="nav-item"><a class="nav-link" href="product.html">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-                    <li class="nav-item">
-                        <a href="#" class="btn btn-outline-light me-2" onclick="showAlert('Login')">Login</a>
-                        <a href="#" class="btn" style="background-color: #930fc8; color: white;"
-                            onclick="showAlert('Register')">Register</a>
-                        <script>
-                            // ฟังก์ชันแสดงหน้าต่างแจ้งเตือน
-                            function showAlert(action) {
-                                alert(`กำลังดำเนินการ: ${action}\nกรุณารอก่อนนะ!`);
-                            }
-                        </script>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#Testimonial">Testimonial</a></li>
+                        <li class="nav-item"><a class="nav-link" href="product.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                        <li class="nav-item">
+                            <a href="login.html" class="btn btn-outline-light me-2">Login</a>
+                            <a href="register.html" class="btn" style="background-color: #930fc8; color: white;">Register</a>
+                            
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </section>
 
 
 
@@ -84,281 +76,286 @@
             }
         });
     </script>
-</body>
-
-<section id="header" class="section text-center bg-light">
-    <div class="container">
-        <h1 class="maintxt2">แนะนำสินค้า</h1>
-        <p class="maintxt">สินค้าที่จะเปลี่ยนชีวิตคุณให้ดียิ่งขึ้น</p>
-
-        <!-- Slider -->
-        <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- สินค้า 1 -->
-                <div class="carousel-item active">
-                    <div class="row align-items-center">
-                        <!-- ภาพสินค้า -->
-                        <div class="col-md-6">
-                            <img src="image/Stellar Nexus.png" class="img-fluid w-50" alt="Stellar Nexus">
-                        </div>
-                        <!-- ข้อความและปุ่ม -->
-                        <div class="col-md-6 text-start">
-                            <h5>Stellar Nexus</h5>
-                            <p>คุณพร้อมหรือยังที่จะเป็นผู้ถือครองศูนย์กลางจักรวาลแห่งความเป็นไปไม่ได้?
-                                จงก้าวสู่โลกของสิ่งแปลกประหลาดก่อนใคร!</p>
-                            <a href="product.html" class="cta-btn">ซื้อ</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- สินค้า 2 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <!-- ภาพสินค้า -->
-                        <div class="col-md-6">
-                            <img src="image/Aether Grip.png" class="img-fluid w-50" alt="Aether Grip">
-                        </div>
-                        <!-- ข้อความและปุ่ม -->
-                        <div class="col-md-6 text-start">
-                            <h5>Aether Grip</h5>
-                            <p>ปลดล็อกขีดจำกัดของมนุษย์ด้วย AetherGrip!
-                                แขนกลอัจฉริยะที่ผสานเทคโนโลยีล้ำยุคและพลังงานแห่งอีเธอร์</p>
-                            <a href="product.html" class="cta-btn">ซื้อ</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- สินค้า 3 -->
-                <div class="carousel-item">
-                    <div class="row align-items-center">
-                        <!-- ภาพสินค้า -->
-                        <div class="col-md-6">
-                            <img src="image/Void Amulet.png" class="img-fluid w-50" alt="Void Amulet">
-                        </div>
-                        <!-- ข้อความและปุ่ม -->
-                        <div class="col-md-6 text-start">
-                            <h5>Void Amulet</h5>
-                            <p>กล้าพอไหมที่จะเป็นเจ้าของชิ้นส่วนแห่งจักรวาลที่เกินกว่าจินตนาการของคุณ?</p>
-                            <a href="product.html" class="cta-btn">ซื้อ</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ปุ่มเลื่อนซ้าย-ขวา -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-    </div>
-</section>
-
-<section class="header-to"></section>
 
 
-<!-- Features Section -->
-<section id="features" class="section bg-light">
-    <div class="container">
-        <h2 class="text-center mb-5 maintxt2">จุดเด่นสินค้าของร้าน</h2>
-        <div class="row">
+    <section id="header" class="section text-center bg-light">
+        <div class="container">
+            <h1 class="maintxt2">แนะนำสินค้า</h1>
+            <p class="maintxt">สินค้าที่จะเปลี่ยนชีวิตคุณให้ดียิ่งขึ้น</p>
 
-            <!-- Feature 1 -->
-            <div class="col-md-4 col-sm-6 col-12">
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="bi bi-speedometer" style="color: #7721e8;"></i>
-                    </div>
-                    <h4>พลังแห่งประสิทธิภาพดุจดวงดาว</h4>
-                    <p>สินค้าของเราเปี่ยมด้วยประสิทธิภาพเหนือระดับ ทำงานรวดเร็วและเสถียร
-                        ราวกับยานอวกาศที่โคจรรอบกาแล็กซีอย่างไร้ที่ติ</p>
-                </div>
-            </div>
-
-            <!-- Feature 2 -->
-            <div class="col-md-4 col-sm-6 col-12">
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="bi bi-shield-lock" style="color: #7721e8;"></i>
-                    </div>
-                    <h4>เกราะป้องกันแห่งจักรวาล</h4>
-                    <p>มาตรการรักษาความปลอดภัยขั้นสูงดุจโล่พลังงานที่คุ้มครองยานสำรวจ
-                        ให้ข้อมูลของคุณปลอดภัยแม้อยู่ในห้วงอวกาศ</p>
-                </div>
-            </div>
-
-            <!-- Feature 3 -->
-            <div class="col-md-4 col-sm-6 col-12">
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="bi bi-gear" style="color: #7721e8;"></i>
-                    </div>
-                    <h4>ปรับแต่งได้ตามใจในห้วงมิติ</h4>
-                    <p>สามารถปรับเปลี่ยนฟังก์ชันต่าง ๆ ให้สอดคล้องกับความต้องการ ราวกับสร้างยานอวกาศในแบบของคุณเอง
-                    </p>
-                </div>
-            </div>
-
-            <!-- Feature 4 -->
-            <div class="col-md-4 col-sm-6 col-12">
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="bi bi-laptop" style="color: #7721e8;"></i>
-                    </div>
-                    <h4>รองรับทุกอุปกรณ์ในจักรวาล</h4>
-                    <p>ใช้งานได้ทุกที่ทุกเวลา ไม่ว่าคุณจะอยู่บนดาวเคราะห์ดวงใด รองรับทั้งบนมือถือ แท็บเล็ต
-                        และคอมพิวเตอร์</p>
-                </div>
-            </div>
-
-            <!-- Feature 5 -->
-            <div class="col-md-4 col-sm-6 col-12">
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="bi bi-palette" style="color: #7721e8;"></i>
-                    </div>
-                    <h4>ดีไซน์ล้ำยุคแห่งกาแล็กซี</h4>
-                    <p>การออกแบบที่ทันสมัยและใช้งานง่าย ราวกับแสงจากดาวฤกษ์ที่นำทาง</p>
-                </div>
-            </div>
-
-            <!-- Feature 6 -->
-            <div class="col-md-4 col-sm-6 col-12">
-                <div class="feature-box">
-                    <div class="feature-icon">
-                        <i class="bi bi-people" style="color: #7721e8;"></i>
-                    </div>
-                    <h4>พันธมิตรแห่งดวงดาว</h4>
-                    <p>ทีมงานผู้เชี่ยวชาญพร้อมดูแลคุณตลอด 24 ชั่วโมง ไม่ว่าจะอยู่ส่วนไหนของจักรวาล
-                        เราพร้อมเคียงข้างคุณ!</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="header-to"></section>
-
-<!-- Optional Testimonial Section -->
-<section id="Testimonial" class="section bg-light">
-    <div class="container">
-        <div>
-            <h1 class="maintxt2">Testimonial</h1>
-        </div>
-        
-
-        <div class="container mt-5">
-            <div class="d-flex justify-content-center py-3">
-
-                <div class="mr-2">
-                    <div class="card">
-                        <div class="px-2 py-2">
-                            <span class="maintxt">"I love how Seanru Shop brings the best of space and technology
-                                together. A must-visit for anyone looking for something extraordinary!"</span>
-                            <div class="d-flex pt-3">
-                                <div><img src="image/girl1.jpg" width="50" class="rounded-circle"></div>
-                                <div class="ml-2">
-                                    <span class="name12">Sora Mint</span>
-                                </div>
+            <!-- Slider -->
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- สินค้า 1 -->
+                    <div class="carousel-item active">
+                        <div class="row align-items-center">
+                            <!-- ภาพสินค้า -->
+                            <div class="col-md-6">
+                                <img src="image/Stellar Nexus.png" class="img-fluid w-50" alt="Stellar Nexus">
+                            </div>
+                            <!-- ข้อความและปุ่ม -->
+                            <div class="col-md-6 text-start">
+                                <h5>Stellar Nexus</h5>
+                                <p>คุณพร้อมหรือยังที่จะเป็นผู้ถือครองศูนย์กลางจักรวาลแห่งความเป็นไปไม่ได้?
+                                    จงก้าวสู่โลกของสิ่งแปลกประหลาดก่อนใคร!</p>
+                                <a href="product.html" class="cta-btn">ซื้อ</a>
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="card mt-3">
-                        <div class="px-2 py-2">
-                            <span class="maintxt">"Shopping at Seanru Shop is a one-of-a-kind experience. The futuristic
-                                designs and fast delivery make it a standout!"</span>
-                            <div class="d-flex pt-3">
-                                <div><img src="image/girl2.jpg" width="50" class="rounded-circle"></div>
-                                <div class="ml-2">
-                                    <span class="name12">Zarvex Quoralis</span>
-                                </div>
+                    <!-- สินค้า 2 -->
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <!-- ภาพสินค้า -->
+                            <div class="col-md-6">
+                                <img src="image/Aether Grip.png" class="img-fluid w-50" alt="Aether Grip">
                             </div>
-
-
+                            <!-- ข้อความและปุ่ม -->
+                            <div class="col-md-6 text-start">
+                                <h5>Aether Grip</h5>
+                                <p>ปลดล็อกขีดจำกัดของมนุษย์ด้วย AetherGrip!
+                                    แขนกลอัจฉริยะที่ผสานเทคโนโลยีล้ำยุคและพลังงานแห่งอีเธอร์</p>
+                                <a href="product.html" class="cta-btn">ซื้อ</a>
+                            </div>
                         </div>
                     </div>
-
-
-
-                </div>
-                <div class="ml-2">
-
-                    <div class="card">
-                        <div class="px-2 py-2">
-                            <span class="maintxt">"I’m amazed by the variety and uniqueness of items offered by Seanru
-                                Shop. It truly brings the universe to your doorstep!"</span>
-                            <div class="d-flex pt-3">
-                                <div><img src="image/girl3.jpg" width="50" class="rounded-circle"></div>
-                                <div class="ml-2">
-                                    <span class="name12">Nyvalla Echronix</span>
-                                </div>
+                    <!-- สินค้า 3 -->
+                    <div class="carousel-item">
+                        <div class="row align-items-center">
+                            <!-- ภาพสินค้า -->
+                            <div class="col-md-6">
+                                <img src="image/Void Amulet.png" class="img-fluid w-50" alt="Void Amulet">
                             </div>
-
-
-                        </div>
-                    </div>
-
-
-                    <div class="card mt-3">
-                        <div class="px-2 py-2">
-                            <span class="maintxt">"The products at Seanru Shop are out of this world! A perfect blend of
-                                quality and innovation. Highly recommended!"</span>
-                            <div class="d-flex pt-3">
-                                <div><img src="image/guy1.jpg" width="50" class="rounded-circle"></div>
-                                <div class="ml-2">
-                                    <span class="name12">Threxon Lumiaris</span>
-                                </div>
+                            <!-- ข้อความและปุ่ม -->
+                            <div class="col-md-6 text-start">
+                                <h5>Void Amulet</h5>
+                                <p>กล้าพอไหมที่จะเป็นเจ้าของชิ้นส่วนแห่งจักรวาลที่เกินกว่าจินตนาการของคุณ?</p>
+                                <a href="product.html" class="cta-btn">ซื้อ</a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- ปุ่มเลื่อนซ้าย-ขวา -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="header-to"></section>
+
+
+    <!-- Features Section -->
+    <section id="features" class="section bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 maintxt2">จุดเด่นสินค้าของร้าน</h2>
+            <div class="row">
+
+                <!-- Feature 1 -->
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-speedometer" style="color: #7721e8;"></i>
+                        </div>
+                        <h4>พลังแห่งประสิทธิภาพดุจดวงดาว</h4>
+                        <p>สินค้าของเราเปี่ยมด้วยประสิทธิภาพเหนือระดับ ทำงานรวดเร็วและเสถียร
+                            ราวกับยานอวกาศที่โคจรรอบกาแล็กซีอย่างไร้ที่ติ</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-lock" style="color: #7721e8;"></i>
+                        </div>
+                        <h4>เกราะป้องกันแห่งจักรวาล</h4>
+                        <p>มาตรการรักษาความปลอดภัยขั้นสูงดุจโล่พลังงานที่คุ้มครองยานสำรวจ
+                            ให้ข้อมูลของคุณปลอดภัยแม้อยู่ในห้วงอวกาศ</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-gear" style="color: #7721e8;"></i>
+                        </div>
+                        <h4>ปรับแต่งได้ตามใจในห้วงมิติ</h4>
+                        <p>สามารถปรับเปลี่ยนฟังก์ชันต่าง ๆ ให้สอดคล้องกับความต้องการ ราวกับสร้างยานอวกาศในแบบของคุณเอง
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-laptop" style="color: #7721e8;"></i>
+                        </div>
+                        <h4>รองรับทุกอุปกรณ์ในจักรวาล</h4>
+                        <p>ใช้งานได้ทุกที่ทุกเวลา ไม่ว่าคุณจะอยู่บนดาวเคราะห์ดวงใด รองรับทั้งบนมือถือ แท็บเล็ต
+                            และคอมพิวเตอร์</p>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-palette" style="color: #7721e8;"></i>
+                        </div>
+                        <h4>ดีไซน์ล้ำยุคแห่งกาแล็กซี</h4>
+                        <p>การออกแบบที่ทันสมัยและใช้งานง่าย ราวกับแสงจากดาวฤกษ์ที่นำทาง</p>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="col-md-4 col-sm-6 col-12">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="bi bi-people" style="color: #7721e8;"></i>
+                        </div>
+                        <h4>พันธมิตรแห่งดวงดาว</h4>
+                        <p>ทีมงานผู้เชี่ยวชาญพร้อมดูแลคุณตลอด 24 ชั่วโมง ไม่ว่าจะอยู่ส่วนไหนของจักรวาล
+                            เราพร้อมเคียงข้างคุณ!</p>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Social Media Links -->
-<section id="social-links" class="bg-dark py-4">
-    <div class="container text-center">
-        <h3 class="text-white mb-4">Contact us</h3>
-        <div class="d-flex justify-content-center align-items-center">
-            <!-- Facebook Icon -->
-            <a href="https://facebook.com" class="text-white mx-3" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
-                    alt="Facebook" class="icon-img" style="width: 30px; height: 30px;">
-            </a>
+    <section class="header-to"></section>
 
-            <!-- X (Twitter) Icon -->
-            <a href="https://x.com/" class="text-white mx-3" target="_blank">
-                <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg"
-                    alt="X" class="icon-img" style="width: 30px; height: 30px;">
-            </a>
+    <!-- Optional Testimonial Section -->
+    <section id="Testimonial" class="section bg-light">
+        <div class="container">
+            <div>
+                <h1 class="maintxt2">Testimonial</h1>
+            </div>
 
-            <!-- Instagram Icon -->
-            <a href="https://instagram.com" class="text-white mx-3" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
-                    class="icon-img" style="width: 30px; height: 30px;">
-            </a>
 
-            <!-- Gmail Icon -->
-            <a href="mailto:example@gmail.com" class="text-white mx-3">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png"
-                    alt="Gmail" class="icon-img" style="width: 30px; height: 30px;">
-            </a>
+            <div class="container mt-5">
+                <div class="d-flex justify-content-center py-3">
+
+                    <div class="mr-2">
+                        <div class="card">
+                            <div class="px-2 py-2">
+                                <span class="maintxt">"I love how Seanru Shop brings the best of space and technology
+                                    together. A must-visit for anyone looking for something extraordinary!"</span>
+                                <div class="d-flex pt-3">
+                                    <div><img src="image/girl1.jpg" width="50" class="rounded-circle"></div>
+                                    <div class="ml-2">
+                                        <span class="name12">Sora Mint</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card mt-3">
+                            <div class="px-2 py-2">
+                                <span class="maintxt">"Shopping at Seanru Shop is a one-of-a-kind experience. The
+                                    futuristic
+                                    designs and fast delivery make it a standout!"</span>
+                                <div class="d-flex pt-3">
+                                    <div><img src="image/girl2.jpg" width="50" class="rounded-circle"></div>
+                                    <div class="ml-2">
+                                        <span class="name12">Zarvex Quoralis</span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="ml-2">
+
+                        <div class="card">
+                            <div class="px-2 py-2">
+                                <span class="maintxt">"I’m amazed by the variety and uniqueness of items offered by
+                                    Seanru
+                                    Shop. It truly brings the universe to your doorstep!"</span>
+                                <div class="d-flex pt-3">
+                                    <div><img src="image/girl3.jpg" width="50" class="rounded-circle"></div>
+                                    <div class="ml-2">
+                                        <span class="name12">Nyvalla Echronix</span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="card mt-3">
+                            <div class="px-2 py-2">
+                                <span class="maintxt">"The products at Seanru Shop are out of this world! A perfect
+                                    blend of
+                                    quality and innovation. Highly recommended!"</span>
+                                <div class="d-flex pt-3">
+                                    <div><img src="image/guy1.jpg" width="50" class="rounded-circle"></div>
+                                    <div class="ml-2">
+                                        <span class="name12">Threxon Lumiaris</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Bootstrap 5 JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="script.js"></script>
+    <!-- Social Media Links -->
+    <section id="social-links" class="bg-dark py-4">
+        <div class="container text-center">
+            <h3 class="text-white mb-4">Contact us</h3>
+            <div class="d-flex justify-content-center align-items-center">
+                <!-- Facebook Icon -->
+                <a href="https://facebook.com" class="text-white mx-3" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                        alt="Facebook" class="icon-img" style="width: 30px; height: 30px;">
+                </a>
+
+                <!-- X (Twitter) Icon -->
+                <a href="https://x.com/" class="text-white mx-3" target="_blank">
+                    <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg"
+                        alt="X" class="icon-img" style="width: 30px; height: 30px;">
+                </a>
+
+                <!-- Instagram Icon -->
+                <a href="https://instagram.com" class="text-white mx-3" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
+                        class="icon-img" style="width: 30px; height: 30px;">
+                </a>
+
+                <!-- Gmail Icon -->
+                <a href="mailto:example@gmail.com" class="text-white mx-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png"
+                        alt="Gmail" class="icon-img" style="width: 30px; height: 30px;">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
 

@@ -24,14 +24,52 @@ body {
 #section-to-fade:hover {
     transform: scale(1.2);
     /* ขยายขนาดให้ใหญ่ขึ้น 20% */
-    font-size: 15rem;
+    font-size: 12rem;
     /* เพิ่มขนาดฟอนต์ */
     height: 100vh;
     /* ปรับขนาดความสูง */
 }
 
 
+.card-pos {
+    position: relative; /* เพื่อให้สามารถใช้ absolute positioning กับ .badge-new */
+}
+.product-img {
+    width: 100%; /* ทำให้ภาพขยายเต็มการ์ด */
+    height: auto;
+}
 
+/* สไตล์ป้าย "New" */
+.badge-new {
+    position: absolute;
+    top: 10px; /* ระยะห่างจากด้านบน */
+    left: 10px; /* ระยะห่างจากด้านซ้าย */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: bounce 1s infinite; /* เริ่มการเคลื่อนไหวแบบเด้ง */
+}
+
+/* การเคลื่อนไหวให้เด้ง */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* เคลื่อนที่ขึ้น */
+    }
+}
+
+.badge-new img {
+    width: 100px; /* ขนาดของดาว */
+    height: 50px;
+}
+
+/* เพิ่มพื้นหลังและขอบมนให้รูปดาว */
+.badge-new img {
+    border-radius: 50%; /* ทำให้รูปดาวมีขอบมน */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* เงาเบา ๆ */
+}
 
 .card {
     background-color: #1a1a1a;
@@ -180,7 +218,7 @@ body {
 
 .nav-link:hover {
     color: #ffffff;
-    transform: scale(1.5);
+    transform: scale(1.2);
     /* ขยายขนาดเมื่อ hover */
 }
 
@@ -274,20 +312,18 @@ body {
 }
 
 
-
 #backToTop {
     position: fixed; /* ติดตามหน้าจอ */
     bottom: 20px; /* ระยะห่างจากขอบล่าง */
-    right: 20px; /* ระยะห่างจากขอบขวา */
-    background-color: #4caf50;
-    color: white;
+    right: 30px; /* ระยะห่างจากขอบขวา */
+    background-image: url(image/GTO.png); /* ใส่ URL รูปภาพ */
+    background-size: cover; /* ทำให้ภาพครอบปุ่มพอดี */
+    background-position: center; /* จัดตำแหน่งภาพให้อยู่กลางปุ่ม */
+    background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
     border: none;
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    text-align: center;
-    line-height: 50px;
-    font-size: 24px;
     cursor: pointer;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
     display: none; /* ซ่อนปุ่มไว้ก่อน */
@@ -295,5 +331,6 @@ body {
 
 /* เปลี่ยนสีเมื่อเอาเมาส์ไปวาง */
 #backToTop:hover {
-    background-color: #45a049;
+    opacity: 0.8;
 }
+
