@@ -15,50 +15,41 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg ">
-    <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="image/logo.png" alt="Logo" style="height: 60px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <section>
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="image/logo.png" alt="Logo" style="height: 60px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
 
-
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#Testimonial">Testimonial</a></li>
-                    <li class="nav-item"><a class="nav-link" href="product.html">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-                    <li class="nav-item">
-                        <a href="#" class="btn btn-outline-light me-2" onclick="showAlert('Login')">Login</a>
-                        <a href="#" class="btn" style="background-color: #930fc8; color: white;"
-                            onclick="showAlert('Register')">Register</a>
-                        <script>
-                            // ฟังก์ชันแสดงหน้าต่างแจ้งเตือน
-                            function showAlert(action) {
-                                alert(`กำลังดำเนินการ: ${action}\nกรุณารอก่อนนะ!`);
-                            }
-                        </script>
-                        <a href="#" class="btn btn-outline-light me-2" onclick="showAlert('Login')">Login</a>
-                        <a href="#" class="btn" style="background-color: #930fc8; color: white;"
-                            onclick="showAlert('Register')">Register</a>
-                        <script>
-                            // ฟังก์ชันแสดงหน้าต่างแจ้งเตือน
-                            function showAlert(action) {
-                                alert(`กำลังดำเนินการ: ${action}\nกรุณารอก่อนนะ!`);
-                            }
-                        </script>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#Testimonial">Testimonial</a></li>
+                        <li class="nav-item"><a class="nav-link" href="product.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                        <li class="nav-item">
+                            <a href="#" class="btn btn-outline-light me-2" onclick="showAlert('Login')">Login</a>
+                            <a href="#" class="btn" style="background-color: #930fc8; color: white;"
+                                onclick="showAlert('Register')">Register</a>
+                            <script>
+                                // ฟังก์ชันแสดงหน้าต่างแจ้งเตือน
+                                function showAlert(action) {
+                                    alert(`กำลังดำเนินการ: ${action}\nกรุณารอก่อนนะ!`);
+                                }
+                            </script>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+
+    </section>
     <div class="container mt-5">
         <div class="row g-4"> <!-- เพิ่ม g-4 เพื่อให้มีระยะห่างระหว่างการ์ด -->
             <!-- Product 1 -->
@@ -73,7 +64,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <!-- Product 2 -->
             <div class="col-4">
                 <div class="card mb-4"> <!-- เพิ่ม mb-4 สำหรับระยะห่างด้านล่างการ์ด -->
@@ -86,20 +77,21 @@
                     </div>
                 </div>
             </div>
-    
+
             <!-- Product 3 -->
             <div class="col-4">
                 <div class="card mb-4"> <!-- เพิ่ม mb-4 สำหรับระยะห่างด้านล่างการ์ด -->
                     <img src="image/Inferno Gear.png" class="card-img-top product-img" alt="Product 3">
                     <div class="card-body">
                         <h5 class="card-title">Inferno Gear</h5>
-                        <p class="card-text">This is a fantastic product, perfect for anyone looking for quality and convenience.</p>
+                        <p class="card-text">This is a fantastic product, perfect for anyone looking for quality and
+                            convenience.</p>
                         <p><strong>$120</strong></p>
                         <button class="btn-buy">Buy Now</button>
                     </div>
                 </div>
             </div>
-    
+
             <!-- Product 4 -->
             <div class="col-4">
                 <div class="card mb-4"> <!-- เพิ่ม mb-4 สำหรับระยะห่างด้านล่างการ์ด -->
@@ -112,7 +104,7 @@
                     </div>
                 </div>
             </div>
-    
+
             <!-- Product 5 -->
             <div class="col-4">
                 <div class="card mb-4"> <!-- เพิ่ม mb-4 สำหรับระยะห่างด้านล่างการ์ด -->
@@ -125,14 +117,15 @@
                     </div>
                 </div>
             </div>
-    
+
             <!-- Product 6 -->
             <div class="col-4">
                 <div class="card mb-4"> <!-- เพิ่ม mb-4 สำหรับระยะห่างด้านล่างการ์ด -->
                     <img src="image/Void Amulet.png" class="card-img-top product-img" alt="Product 3">
                     <div class="card-body">
                         <h5 class="card-title">Void Amulet</h5>
-                        <p class="card-text">This is a fantastic product, perfect for anyone looking for quality and convenience.</p>
+                        <p class="card-text">This is a fantastic product, perfect for anyone looking for quality and
+                            convenience.</p>
                         <p><strong>$120</strong></p>
                         <button class="btn-buy">Buy Now</button>
                     </div>
@@ -140,5 +133,3 @@
             </div>
         </div>
     </div>
-    
-    
