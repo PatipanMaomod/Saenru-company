@@ -15,8 +15,16 @@ body {
     justify-content: center;
     font-size: 2rem;
     text-align: center;
-    transition: opacity 1s ease, transform 1s ease;
+    transition: opacity 1s ease, transform 1s ease, height 1s ease, font-size 1s ease;
 }
+
+#section-to-fade:hover {
+    transform: scale(1.2); /* ขยายขนาดให้ใหญ่ขึ้น 20% */
+    font-size: 15rem; /* เพิ่มขนาดฟอนต์ */
+    height: 100vh; /* ปรับขนาดความสูง */
+}
+
+
 
 
 .card {
@@ -73,7 +81,7 @@ body {
 /*ตัวแบ่ง*/
 
 .section {
-    padding: 60px 0;
+    padding: 100px 0;
 }
 /*ตัวแบ่ง*/
 
@@ -156,12 +164,11 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
 
-/* Apply the font to the .fantasy-text class */
 .fantasy-text {
-    font-family: 'Cinzel', serif;  /* Apply the 'Cinzel' fantasy font */
-    font-size: 2rem;  /* Adjust the font size to make the text smaller */
-    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.7);  /* Optional: Add a text shadow for effect */
-    color: #ffcc00;  /* Adjust text color for better visibility */
-    letter-spacing: 1px;  /* Optional: Add spacing between letters for dramatic effect */
+    font-family: 'Cinzel', serif; 
+    font-size: 10rem; 
+    text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.7); 
+    color: #000000;  
+    letter-spacing: 1px;  
 }
 
