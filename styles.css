@@ -113,6 +113,13 @@ body {
     bottom: 3px;
 }
 
+.name12 {
+    color: #ffcc00; /* สีเขียว */
+    font-size: 18px; /* ขนาดตัวอักษร */
+    font-weight: bold; /* ทำตัวหนา */
+    font-family: "Arial", sans-serif; /* แบบตัวอักษร */
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
 
 /* Apply the font to the .fantasy-text class */
