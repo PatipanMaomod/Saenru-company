@@ -59,3 +59,25 @@ function loadNavbar() {
 
 // เรียกฟังก์ชัน loadNavbar เมื่อหน้าเว็บโหลดเสร็จ
 document.addEventListener('DOMContentLoaded', loadNavbar);
+// เพิ่มซูมด้วยการเลื่อนเมาส์
+let modalImage = document.getElementById('modalImage');
+
+// ฟังก์ชันที่ปรับขนาดภาพตามการเลื่อนเมาส์
+modalImage.addEventListener('wheel', function(event) {
+    let scale = 1;
+
+    // ซูมเข้าเมื่อเลื่อนขึ้น, ซูมออกเมื่อเลื่อนลง
+    if (event.deltaY < 0) {
+        scale += 0.1;
+    } else {
+        scale -= 0.1;
+    }
+
+    // จำกัดการซูม
+    if (scale >= 1 && scale <= 3) {
+        modalImage.style.transform = `scale(${scale})`;
+    }
+
+    // ป้องกันการเลื่อนหน้าเพจเมื่อมีการเลื่อนเมาส์
+    event.preventDefault();
+});

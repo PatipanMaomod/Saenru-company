@@ -39,24 +39,25 @@
                     <div class="carousel-item active">
                         <div class="row align-items-center">
                             <!-- ภาพสินค้า -->
-                            <div class="col-md-6">
-                                <img src="image/Stellar Nexus.png" class="img-fluid w-50" alt="Stellar Nexus">
+                            <div class="col-md-6 zoom-image">
+                                <img src="image/Stellar Nexus.png" class="img-fluid w-50" alt="Stellar Nexus" data-bs-toggle="modal" data-bs-target="#modalStellarNexus">
                             </div>
                             <!-- ข้อความและปุ่ม -->
                             <div class="col-md-6 text-start">
                                 <h5>Stellar Nexus</h5>
                                 <p>คุณพร้อมหรือยังที่จะเป็นผู้ถือครองศูนย์กลางจักรวาลแห่งความเป็นไปไม่ได้?
                                     จงก้าวสู่โลกของสิ่งแปลกประหลาดก่อนใคร!</p>
-                                    <button class="btn-buy" onclick="window.location.href='Stellar Nexus.html'">Buy Now</button>
+                                <button class="btn-buy" onclick="window.location.href='Stellar Nexus.html'">Buy Now</button>
                             </div>
                         </div>
                     </div>
-                    <!-- สินค้า 2 -->
+                    
+                    <!-- Carousel Item 2 -->
                     <div class="carousel-item">
                         <div class="row align-items-center">
                             <!-- ภาพสินค้า -->
-                            <div class="col-md-6">
-                                <img src="image/Aether Grip.png" class="img-fluid w-50" alt="Aether Grip">
+                            <div class="col-md-6 zoom-image">
+                                <img src="image/Aether Grip.png" class="img-fluid w-50" alt="Aether Grip" data-bs-toggle="modal" data-bs-target="#modalAetherGrip">
                             </div>
                             <!-- ข้อความและปุ่ม -->
                             <div class="col-md-6 text-start">
@@ -67,12 +68,13 @@
                             </div>
                         </div>
                     </div>
-                    <!-- สินค้า 3 -->
+                    
+                    <!-- Carousel Item 3 -->
                     <div class="carousel-item">
                         <div class="row align-items-center">
                             <!-- ภาพสินค้า -->
-                            <div class="col-md-6">
-                                <img src="image/Void Amulet.png" class="img-fluid w-50" alt="Void Amulet">
+                            <div class="col-md-6 zoom-image">
+                                <img src="image/Void Amulet.png" class="img-fluid w-50" alt="Void Amulet" data-bs-toggle="modal" data-bs-target="#modalVoidAmulet">
                             </div>
                             <!-- ข้อความและปุ่ม -->
                             <div class="col-md-6 text-start">
@@ -82,6 +84,49 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Modal สำหรับ Stellar Nexus -->
+                    <div class="modal fade" id="modalStellarNexus" tabindex="-1" aria-labelledby="modalStellarNexusLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <img src="image/Stellar Nexus.png" class="img-fluid" alt="Stellar Nexus" style="max-width: 100%; max-height: 80vh;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Modal สำหรับ Aether Grip -->
+                    <div class="modal fade" id="modalAetherGrip" tabindex="-1" aria-labelledby="modalAetherGripLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <img src="image/Aether Grip.png" class="img-fluid" alt="Aether Grip" style="max-width: 100%; max-height: 80vh;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Modal สำหรับ Void Amulet -->
+                    <div class="modal fade" id="modalVoidAmulet" tabindex="-1" aria-labelledby="modalVoidAmuletLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <img src="image/Void Amulet.png" class="img-fluid" alt="Void Amulet" style="max-width: 100%; max-height: 80vh;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
 
                 <!-- ปุ่มเลื่อนซ้าย-ขวา -->

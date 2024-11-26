@@ -416,3 +416,17 @@ body {
     z-index: 1; /* อยู่เหนือ ::before แต่ใต้ h2 */
 }
 
+/* การซูมภาพเมื่อผู้ใช้โฮเวอร์ */
+.zoom-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่ม transition สำหรับ transform และ box-shadow */
+}
+
+.zoom-image:hover {
+    transform: scale(1.2);  /* ซูมให้ภาพขยายขึ้น */
+    border: none;  /* ไม่มีกรอบ */
+}
+
+/* CSS สำหรับ modal */
+.modal-body img {
+    transition: transform 10s ease;
+}
