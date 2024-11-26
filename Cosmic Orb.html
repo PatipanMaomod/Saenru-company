@@ -59,43 +59,35 @@
             font-size: 24px;
             font-weight: bold;
         }
+
+        /* Style for Cart Modal */
+        .modal-header .btn-close {
+            color: #000;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+        }
+
+        .modal-body {
+            font-size: 16px;
+        }
+
+        .modal-footer .btn {
+            background-color: #7721e8;
+            color: white;
+            font-weight: bold;
+        }
+
+        .modal-footer .btn:hover {
+            background-color: #5a13c1;
+        }
     </style>
 </head>
 
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="image/logo.png" alt="Logo" style="height: 60px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#Testimonial">Testimonial</a></li>
-                    <li class="nav-item"><a class="nav-link" href="product.html">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-                    <li class="nav-item ms-3">
-                        <a href="login.html" class="btn btn-outline-light me-2"
-                            onclick="showAlert('Login')">Login</a>
-                        <a href="register.html" class="btn btn-outline"
-                            style="background-color: #953232; color: white; transition: background-color 0.3s, color 0.3s;"
-                            onmouseover="this.style.backgroundColor='#bf4848'; this.style.color='white';"
-                            onmouseout="this.style.backgroundColor='#953232'; this.style.color='white';"
-                            onclick="showAlert('Register')">Register</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar-container"></div>
 
     <!-- Product Detail Section -->
     <div class="container product-detail">
@@ -111,7 +103,7 @@
                 <p><strong>Price:</strong> $50</p>
                 <p><strong>Availability:</strong> In Stock</p>
                 <p><strong>Category:</strong>wearables</p>
-                <button class="btn-add-to-cart">Add to Cart</button>
+                <button class="btn-add-to-cart" data-bs-toggle="modal" data-bs-target="#cartModal">Add to Cart</button>
             </div>
         </div>
 
@@ -135,29 +127,42 @@
         </div>
     </div>
 
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>You have added <strong>Cosmic Orb</strong> to your cart. Would you like to proceed to checkout or continue shopping?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                    <button type="button" class="btn btn-primary">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Links Section -->
     <section id="social-links" class="bg-dark py-4">
         <div class="container text-center">
             <h3 class="text-white mb-4">Contact us</h3>
             <div class="d-flex justify-content-center align-items-center">
-                <!-- Facebook Icon -->
                 <a href="https://facebook.com" class="text-white mx-3" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
                         alt="Facebook" class="icon-img" style="width: 30px; height: 30px;">
                 </a>
-    
-                <!-- X (Twitter) Icon -->
                 <a href="https://x.com/" class="text-white mx-3" target="_blank">
                     <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg"
                         alt="X" class="icon-img" style="width: 30px; height: 30px;">
                 </a>
-    
-                <!-- Instagram Icon -->
                 <a href="https://instagram.com" class="text-white mx-3" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
                         class="icon-img" style="width: 30px; height: 30px;">
                 </a>
-    
-                <!-- Gmail Icon -->
                 <a href="mailto:example@gmail.com" class="text-white mx-3">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png"
                         alt="Gmail" class="icon-img" style="width: 30px; height: 30px;">
@@ -165,10 +170,19 @@
             </div>
         </div>
     </section>
-    
 
-
-    <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Use Fetch API to load navbar.html and inject it into the page
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
 </body>
+
 </html>

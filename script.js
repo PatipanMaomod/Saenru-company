@@ -47,3 +47,15 @@ document.addEventListener('mousemove', function(e) {
     mouseCircle.style.height = circleSize + 'px';
 });
 
+
+function loadNavbar() {
+    fetch('navbar.html')  // กำหนด path ของไฟล์ navbar.html
+        .then(response => response.text()) // ดึงข้อมูล HTML
+        .then(data => {
+            document.getElementById('navbar-container').innerHTML = data; // ใส่ข้อมูลที่ดึงมาใน element ที่มี id="navbar-container"
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+}
+
+// เรียกฟังก์ชัน loadNavbar เมื่อหน้าเว็บโหลดเสร็จ
+document.addEventListener('DOMContentLoaded', loadNavbar);
