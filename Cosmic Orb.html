@@ -10,97 +10,134 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
         .product-detail {
-            padding: 30px;
+            padding: 50px 20px;
         }
 
         .product-img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
         .product-info {
-            margin-left: 30px;
+            padding-left: 20px;
         }
 
         .product-info h2 {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
         }
 
         .product-info p {
-            font-size: 16px;
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 10px;
         }
 
         .btn-add-to-cart {
-            background-color: #7721e8;
+            background-color: #6a1b9a;
             color: white;
-            padding: 12px 30px;
-            font-size: 16px;
+            padding: 14px 40px;
+            font-size: 18px;
             font-weight: bold;
-            border-radius: 5px;
-            margin-top: 20px;
+            border: none;
+            border-radius: 8px;
             transition: background-color 0.3s, transform 0.2s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .btn-add-to-cart:hover {
-            background-color: #5a13c1;
+            background-color: #4a148c;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         .product-description {
-            margin-top: 20px;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
+            margin-top: 30px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .product-description:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
 
         .product-description h3 {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .product-description p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.8;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="image/logo.png" alt="Logo" style="height: 60px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <section>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="image/logo.png" alt="Logo" style="height: 60px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#Testimonial">Testimonial</a></li>
-                    <li class="nav-item"><a class="nav-link" href="product.html">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-                    <li class="nav-item">
-                        <a href="#" class="btn btn-outline-light me-2" onclick="showAlert('Login')">Login</a>
-                        <a href="#" class="btn" style="background-color: #930fc8; color: white;"
-                            onclick="showAlert('Register')">Register</a>
-                        <script>
-                            // ฟังก์ชันแสดงหน้าต่างแจ้งเตือน
-                            function showAlert(action) {
-                                alert(`กำลังดำเนินการ: ${action}\nกรุณารอก่อนนะ!`);
-                            }
-                        </script>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#Testimonial">Testimonial</a></li>
+                        <li class="nav-item"><a class="nav-link" href="product.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                        <li class="nav-item ms-3">
+                            <a href="login.html" class="btn btn-outline-light me-2"
+                                onclick="showAlert('Login')">Login</a>
+                            <a href="register.html" class="btn btn-outline"
+                                style="background-color: #953232; color: white; transition: background-color 0.3s, color 0.3s;"
+                                onmouseover="this.style.backgroundColor='#bf4848'; this.style.color='white';"
+                                onmouseout="this.style.backgroundColor='#953232'; this.style.color='white';"
+                                onclick="showAlert('Register')">Register</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </section>
 
     <!-- Product Detail Section -->
     <div class="container product-detail">
-        <div class="row">
+        <div class="row bg-light p-4 rounded shadow-sm">
             <!-- Product Image -->
             <div class="col-md-6">
                 <img src="image/Cosmic Orb.png" alt="Product Image" class="product-img">
@@ -111,29 +148,56 @@
                 <h2>Cosmic Orb</h2>
                 <p><strong>Price:</strong> $50</p>
                 <p><strong>Availability:</strong> In Stock</p>
-                <p><strong>Category:</strong>wearables</p>
+                <p><strong>Category:</strong> wearables</p>
                 <button class="btn-add-to-cart">Add to Cart</button>
             </div>
         </div>
 
-        <!-- Product Description -->
-        <div class="product-description">
-            <h3>Product Description</h3>
-            <p>This is a detailed description of the product. Here, you can provide more information about the product's features, benefits, and any other important details that will help the customer make a purchasing decision. You can also include specifications, usage instructions, or any other relevant information about the product.</p>
+
+        <div class="tabs-section mt-4">
+            <div class="container">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="description-tab" data-bs-toggle="tab"
+                            data-bs-target="#description" type="button" role="tab">Description</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews"
+                            type="button" role="tab">Reviews</button>
+                    </li>
+                </ul>
+
+                <!-- Content with background -->
+                <div class="tab-content p-4 mt-3 bg-light rounded shadow-sm" id="myTabContent"
+                    style="max-width: 900px; margin: 0 auto;">
+                    <!-- Description Tab -->
+                    <div class="tab-pane fade show active" id="description" role="tabpanel">
+                        <p>
+                            "สัมผัสพลังแห่งจักรวาลในรูปแบบใหม่กับ Cosmic Orb
+                            ลูกบอลอวกาศสุดล้ำที่ถูกออกแบบด้วยกลไกแห่งมิติที่หมุนวนและไหลเวียนเชื่อมต่อกันอย่างไร้ที่สิ้นสุด
+                            ลวดลายที่ซับซ้อนบนผิวของมันเหมือนเป็นการสื่อสารจากมิติอื่น
+                            ที่แสดงถึงความลึกลับและความไม่แน่นอนของจักรวาลที่ไม่มีวันสิ้นสุด
+
+                            ด้วยดีไซน์ที่เปล่งประกายแสงราวกับมีชีวิต ลูกบอลนี้ไม่เพียงแค่เป็นของตกแต่ง
+                            แต่เป็นสัญลักษณ์ของการสำรวจสิ่งที่ไม่รู้จัก
+                            และการเชื่อมต่อระหว่างโลกกับจักรวาลที่กว้างใหญ่ไพศาล
+                            เหมาะสำหรับผู้ที่รักในการเดินทางสู่จักรวาลหรือผู้ที่ต้องการประสบการณ์ทางจิตวิญญาณที่แปลกใหม่
+
+                            🔮 Cosmic Orb คือการนำจักรวาลเข้าสู่มุมมองของคุณ พร้อมด้วยความงามที่เปล่งประกายจากภายใน
+                            พร้อมที่จะเผยให้คุณเห็นถึงความลึกลับที่ซ่อนอยู่ในห้วงจักรวาล!"
+                        </p>
+                    </div>
+
+                    <!-- Reviews Tab -->
+                    <div class="tab-pane fade" id="reviews" role="tabpanel">
+                        <p><strong>John Doe:</strong> This product is amazing! (5 stars)</p>
+                        <p><strong>Jane Smith:</strong> Good quality, but shipping was delayed. (4 stars)</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Reviews Section -->
-        <div class="product-reviews mt-4">
-            <h3>Customer Reviews</h3>
-            <div class="review">
-                <p><strong>John Doe</strong> - <span class="text-muted">5 stars</span></p>
-                <p>This product is amazing! It works exactly as described and I am very happy with my purchase.</p>
-            </div>
-            <div class="review">
-                <p><strong>Jane Smith</strong> - <span class="text-muted">4 stars</span></p>
-                <p>Good quality, but it took a little longer to arrive than expected.</p>
-            </div>
-        </div>
+
     </div>
 
     <section id="social-links" class="bg-dark py-4">
@@ -145,19 +209,19 @@
                     <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
                         alt="Facebook" class="icon-img" style="width: 30px; height: 30px;">
                 </a>
-    
+
                 <!-- X (Twitter) Icon -->
                 <a href="https://x.com/" class="text-white mx-3" target="_blank">
                     <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg"
                         alt="X" class="icon-img" style="width: 30px; height: 30px;">
                 </a>
-    
+
                 <!-- Instagram Icon -->
                 <a href="https://instagram.com" class="text-white mx-3" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
                         class="icon-img" style="width: 30px; height: 30px;">
                 </a>
-    
+
                 <!-- Gmail Icon -->
                 <a href="mailto:example@gmail.com" class="text-white mx-3">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png"
@@ -166,10 +230,11 @@
             </div>
         </div>
     </section>
-    
+
 
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
