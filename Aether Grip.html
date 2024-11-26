@@ -9,93 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
 
-        .product-detail {
-            padding: 50px 20px;
-        }
-
-        .product-img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .product-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .product-info {
-            padding-left: 20px;
-        }
-
-        .product-info h2 {
-            font-size: 32px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .product-info p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        .btn-add-to-cart {
-            background-color: #6a1b9a;
-            color: white;
-            padding: 14px 40px;
-            font-size: 18px;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
-            transition: background-color 0.3s, transform 0.2s ease;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-add-to-cart:hover {
-            background-color: #4a148c;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .product-description {
-            margin-top: 30px;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
-        }
-
-        .product-description:hover {
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        .product-description h3 {
-            font-size: 26px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .product-description p {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.8;
-        }
-    </style>
 </head>
 
 <body>
@@ -103,63 +17,65 @@
     <div id="navbar-container"></div>
 
     <!-- Product Detail Section -->
-    <div class="container product-detail">
-        <div class="row bg-light p-4 rounded shadow-sm">
-            <!-- Product Image -->
-            <div class="col-md-6">
-                <img src="image/Aether Grip.png" alt="Product Image" class="product-img">
+    <section>
+        <div class="container product-detail">
+            <div class="row bg-light p-4 rounded shadow-sm">
+                <!-- Product Image -->
+                <div class="col-md-6">
+                    <img src="image/Aether Grip.png" alt="Product Image" class="product-img">
+                </div>
+
+                <!-- Product Information -->
+                <div class="col-md-6 product-info">
+                    <h2>Aether Grip</h2>
+                    <p><strong>Price:</strong> $50</p>
+                    <p><strong>Availability:</strong> In Stock</p>
+                    <p><strong>Category:</strong> wearables</p>
+                    <button class="btn-buy">Add to Cart</button>
+                </div>
             </div>
 
-            <!-- Product Information -->
-            <div class="col-md-6 product-info">
-                <h2>Aether Grip</h2>
-                <p><strong>Price:</strong> $50</p>
-                <p><strong>Availability:</strong> In Stock</p>
-                <p><strong>Category:</strong> wearables</p>
-                <button class="btn-add-to-cart">Add to Cart</button>
-            </div>
-        </div>
 
+            <div class="tabs-section mt-4">
+                <div class="container">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link custom-tab active" id="description-tab" data-bs-toggle="tab"
+                                data-bs-target="#description" type="button" role="tab">Description</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link custom-tab" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews"
+                                type="button" role="tab">Reviews</button>
+                        </li>
+                    </ul>
 
-        <div class="tabs-section mt-4">
-            <div class="container">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="description-tab" data-bs-toggle="tab"
-                            data-bs-target="#description" type="button" role="tab">Description</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews"
-                            type="button" role="tab">Reviews</button>
-                    </li>
-                </ul>
+                    <!-- Content with background -->
+                    <div class="tab-content p-4 mt-3 bg-light rounded shadow-sm" id="myTabContent"
+                        style="max-width: 900px; margin: 0 auto;">
+                        <!-- Description Tab -->
+                        <div class="tab-pane fade show active" id="description" role="tabpanel">
+                            <p>
+                                "ปลดล็อกขีดจำกัดของมนุษย์ด้วย AetherGrip!
+                                แขนกลอัจฉริยะที่ผสานเทคโนโลยีล้ำยุคและพลังงานแห่งอีเธอร์
+                                เปลี่ยนทุกการสัมผัสของคุณให้เป็นพลังสร้างสรรค์เหนือจินตนาการ
+                                ไม่ว่าจะเป็นการใช้งานในภารกิจอุตสาหกรรม การสำรวจ หรือแม้แต่การป้องกันตัว AetherGrip
+                                คือเพื่อนคู่ใจของคุณในทุกสถานการณ์
+                                พร้อมแสงเอฟเฟกต์สุดล้ำที่เปล่งประกายทุกครั้งที่คุณลงมือ!"
+                            </p>
+                        </div>
 
-                <!-- Content with background -->
-                <div class="tab-content p-4 mt-3 bg-light rounded shadow-sm" id="myTabContent"
-                    style="max-width: 900px; margin: 0 auto;">
-                    <!-- Description Tab -->
-                    <div class="tab-pane fade show active" id="description" role="tabpanel">
-                        <p>
-                            "ปลดล็อกขีดจำกัดของมนุษย์ด้วย AetherGrip!
-                            แขนกลอัจฉริยะที่ผสานเทคโนโลยีล้ำยุคและพลังงานแห่งอีเธอร์
-                            เปลี่ยนทุกการสัมผัสของคุณให้เป็นพลังสร้างสรรค์เหนือจินตนาการ
-                            ไม่ว่าจะเป็นการใช้งานในภารกิจอุตสาหกรรม การสำรวจ หรือแม้แต่การป้องกันตัว AetherGrip
-                            คือเพื่อนคู่ใจของคุณในทุกสถานการณ์ พร้อมแสงเอฟเฟกต์สุดล้ำที่เปล่งประกายทุกครั้งที่คุณลงมือ!"
-                        </p>
-                    </div>
-
-                    <!-- Reviews Tab -->
-                    <div class="tab-pane fade" id="reviews" role="tabpanel">
-                        <p><strong>John Doe:</strong> This product is amazing! (5 stars)</p>
-                        <p><strong>Jane Smith:</strong> Good quality, but shipping was delayed. (4 stars)</p>
+                        <!-- Reviews Tab -->
+                        <div class="tab-pane fade" id="reviews" role="tabpanel">
+                            <p><strong>John Doe:</strong> This product is amazing! (5 stars)</p>
+                            <p><strong>Jane Smith:</strong> Good quality, but shipping was delayed. (4 stars)</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-
-
-    </div>
+    <section class="header-to"></section>
 
     <section id="social-links" class="bg-dark py-4">
         <div class="container text-center">
