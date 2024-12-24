@@ -46,16 +46,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.post('/user', async (req, res) => {
-    const { first_name, last_name, email, password } = req.body;
+    const { username, email, password } = req.body;
   
     const connection = await pool.getConnection();
     const [result] = await connection.query(
-      'INSERT INTO users (first_name, last_name, email, password, created_at) VALUES (?, ?, ?, ?, NOW())',
-      [first_name, last_name, email, password]
+      'INSERT INTO users (username, email, password) VALUES (?, ?, ? NOW())',
+      [username, email,password]
     );
     connection.release();
   
-    res.status(201).json({ id: result.insertId, first_name, last_name, email });
+    res.status(201).json({ id: result.insertId, username,email,password });
   });
 // Routes
 app.get('/', (req, res) => {
@@ -76,6 +76,10 @@ app.get('/register', (req, res) => {
 app.get('/basket', (req, res) => {
     res.sendFile(path.join(__dirname, 'view', 'basket.html'));
 });
+app.get('/cart', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'cart.html'));
+});
+
 
 
 app.get('/Aether_Grip', (req, res) => {
