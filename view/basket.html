@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตะกร้าสินค้า</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        body {
+            font-family: 'TH SarabunPSK', sans-serif;
+            background-image: url('WallpeperH.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        h2 {
+            text-align: center;
+            color: #000000;
+        }
+
+        h2 {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 35px;
+            background-color: #ffffff;
+            font-size: 21px;
+            font-family: 'TH SarabunPSK', sans-serif;
+        }
+
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+
+        .payment-method {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        .highlight {
+            border: 2px solid #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>ที่อยู่จัดส่งและรูปแบบการชำระเงิน</h1>
+        <form>
+            <div class="highlight">
+                <h2>ที่อยู่จัดส่ง</h2>
+                <label for="name">ชื่อ:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="address">ที่อยู่:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="zipcode">รหัสไปรษณีย์:</label>
+                <input type="number" id="zipcode" name="zipcode" required>
+            </div>
+
+            <div class="highlight">
+                <h2>ช่องทางการชำระ</h2>
+                <div class="payment-method">
+                    <input type="radio" id="bank" name="payment" value="bank" required>
+                    <label for="bank">ธนาคาร</label>
+                </div>
+                <div class="payment-method">
+                    <input type="radio" id="cash" name="payment" value="cash">
+                    <label for="cash">ทรูมันนี่วอเลท</label>
+                </div>
+                <div class="payment-method">
+                    <input type="radio" id="cod" name="payment" value="cod" required>
+                    <label for="cod">เงินสดปลายทาง</label>
+                </div>
+            </div>
+
+            <button type="submit">ยืนยัน</button>
+        </form>
+    </div>
+</body>
+
+</html>

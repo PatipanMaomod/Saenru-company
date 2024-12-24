@@ -15,7 +15,34 @@
 
 <body>
     <button id="backToTop"></button>
-    <div id="navbar-container"></div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="image/logo.png" alt="Logo" style="height: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#Testimonial">Testimonial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/product">Shop</a></li>
+
+                    <!-- เชื่อมโยงไปที่ /product -->
+                    <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="nav-item ms-3">
+                        <a href="login.html">
+                            <img src="image/profile.png" alt="Profile"
+                                style="height: 40px; width: 40px; border-radius: 50%;">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <div class="container mt-5">
         <div class="row g-4"> <!-- เพิ่ม g-4 เพื่อให้มีระยะห่างระหว่างการ์ด -->

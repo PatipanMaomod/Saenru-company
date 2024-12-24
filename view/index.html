@@ -8,14 +8,47 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <button id="backToTop"></button>
-    <div id="navbar-container"></div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="image/logo.png" alt="Logo" style="height: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" id="navbar-links">
+                    <!-- ลิงก์เมนูจะถูกเพิ่มที่นี่โดย JavaScript -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // ฟังก์ชั่นดึงข้อมูล navbar จาก backend
+        fetch('/navbar')
+            .then(response => response.json()) // แปลงข้อมูลจาก JSON
+            .then(data => {
+                const navbarLinksContainer = document.getElementById('navbar-links');
+                data.forEach(link => {
+                    const li = document.createElement('li');
+                    li.classList.add('nav-item');
+                    li.innerHTML = `<a class="nav-link" href="${link.link}">${link.name}</a>`;
+                    navbarLinksContainer.appendChild(li);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching navbar:', error);
+            });
+    </script>
 
     <section id="home">
         <div id="section-to-fade">
@@ -40,93 +73,108 @@
                         <div class="row align-items-center">
                             <!-- ภาพสินค้า -->
                             <div class="col-md-6 zoom-image">
-                                <img src="image/Stellar Nexus.png" class="img-fluid w-50" alt="Stellar Nexus" data-bs-toggle="modal" data-bs-target="#modalStellarNexus">
+                                <img src="image/Stellar Nexus.png" class="img-fluid w-50" alt="Stellar Nexus"
+                                    data-bs-toggle="modal" data-bs-target="#modalStellarNexus">
                             </div>
                             <!-- ข้อความและปุ่ม -->
                             <div class="col-md-6 text-start">
                                 <h5>Stellar Nexus</h5>
                                 <p>คุณพร้อมหรือยังที่จะเป็นผู้ถือครองศูนย์กลางจักรวาลแห่งความเป็นไปไม่ได้?
                                     จงก้าวสู่โลกของสิ่งแปลกประหลาดก่อนใคร!</p>
-                                <button class="btn-buy" onclick="window.location.href='Stellar Nexus.html'">Buy Now</button>
+                                <button class="btn-buy" onclick="window.location.href='Stellar Nexus.html'">Buy
+                                    Now</button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Carousel Item 2 -->
                     <div class="carousel-item">
                         <div class="row align-items-center">
                             <!-- ภาพสินค้า -->
                             <div class="col-md-6 zoom-image">
-                                <img src="image/Aether Grip.png" class="img-fluid w-50" alt="Aether Grip" data-bs-toggle="modal" data-bs-target="#modalAetherGrip">
+                                <img src="image/Aether Grip.png" class="img-fluid w-50" alt="Aether Grip"
+                                    data-bs-toggle="modal" data-bs-target="#modalAetherGrip">
                             </div>
                             <!-- ข้อความและปุ่ม -->
                             <div class="col-md-6 text-start">
                                 <h5>Aether Grip</h5>
                                 <p>ปลดล็อกขีดจำกัดของมนุษย์ด้วย AetherGrip!
                                     แขนกลอัจฉริยะที่ผสานเทคโนโลยีล้ำยุคและพลังงานแห่งอีเธอร์</p>
-                                <button class="btn-buy" onclick="window.location.href='Aether Grip.html'">Buy Now</button>
+                                <button class="btn-buy" onclick="window.location.href='Aether Grip.html'">Buy
+                                    Now</button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Carousel Item 3 -->
                     <div class="carousel-item">
                         <div class="row align-items-center">
                             <!-- ภาพสินค้า -->
                             <div class="col-md-6 zoom-image">
-                                <img src="image/Void Amulet.png" class="img-fluid w-50" alt="Void Amulet" data-bs-toggle="modal" data-bs-target="#modalVoidAmulet">
+                                <img src="image/Void Amulet.png" class="img-fluid w-50" alt="Void Amulet"
+                                    data-bs-toggle="modal" data-bs-target="#modalVoidAmulet">
                             </div>
                             <!-- ข้อความและปุ่ม -->
                             <div class="col-md-6 text-start">
                                 <h5>Void Amulet</h5>
                                 <p>กล้าพอไหมที่จะเป็นเจ้าของชิ้นส่วนแห่งจักรวาลที่เกินกว่าจินตนาการของคุณ?</p>
-                                <button class="btn-buy" onclick="window.location.href='Void Amulet.html'">Buy Now</button>
+                                <button class="btn-buy" onclick="window.location.href='Void Amulet.html'">Buy
+                                    Now</button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Modal สำหรับ Stellar Nexus -->
-                    <div class="modal fade" id="modalStellarNexus" tabindex="-1" aria-labelledby="modalStellarNexusLabel" aria-hidden="true">
+                    <div class="modal fade" id="modalStellarNexus" tabindex="-1"
+                        aria-labelledby="modalStellarNexusLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body text-center">
-                                    <img src="image/Stellar Nexus.png" class="img-fluid" alt="Stellar Nexus" style="max-width: 100%; max-height: 80vh;">
+                                    <img src="image/Stellar Nexus.png" class="img-fluid" alt="Stellar Nexus"
+                                        style="max-width: 100%; max-height: 80vh;">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Modal สำหรับ Aether Grip -->
-                    <div class="modal fade" id="modalAetherGrip" tabindex="-1" aria-labelledby="modalAetherGripLabel" aria-hidden="true">
+                    <div class="modal fade" id="modalAetherGrip" tabindex="-1" aria-labelledby="modalAetherGripLabel"
+                        aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body text-center">
-                                    <img src="image/Aether Grip.png" class="img-fluid" alt="Aether Grip" style="max-width: 100%; max-height: 80vh;">
+                                    <img src="image/Aether Grip.png" class="img-fluid" alt="Aether Grip"
+                                        style="max-width: 100%; max-height: 80vh;">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Modal สำหรับ Void Amulet -->
-                    <div class="modal fade" id="modalVoidAmulet" tabindex="-1" aria-labelledby="modalVoidAmuletLabel" aria-hidden="true">
+                    <div class="modal fade" id="modalVoidAmulet" tabindex="-1" aria-labelledby="modalVoidAmuletLabel"
+                        aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body text-center">
-                                    <img src="image/Void Amulet.png" class="img-fluid" alt="Void Amulet" style="max-width: 100%; max-height: 80vh;">
+                                    <img src="image/Void Amulet.png" class="img-fluid" alt="Void Amulet"
+                                        style="max-width: 100%; max-height: 80vh;">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <!-- ปุ่มเลื่อนซ้าย-ขวา -->
@@ -237,7 +285,7 @@
             <div>
                 <h1 class="maintxt2">Testimonial</h1>
             </div>
-    
+
             <div class="row mt-5 gy-4">
                 <!-- Testimonial 1 -->
                 <div class="col-lg-6">
@@ -254,7 +302,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Testimonial 2 -->
                 <div class="col-lg-6">
                     <div class="card">
@@ -270,7 +318,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Testimonial 3 -->
                 <div class="col-lg-6">
                     <div class="card">
@@ -286,7 +334,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <!-- Testimonial 4 -->
                 <div class="col-lg-6">
                     <div class="card">
@@ -304,6 +352,7 @@
                 </div>
             </div>
         </div>
+        
     </section>
     <!-- Social Media Links -->
     <section id="social-links" class="bg-dark py-4">
