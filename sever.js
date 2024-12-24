@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 const session = require('express-session');
 const flash = require('connect-flash');
 const path = require('path');
-
+const ejs = require('ejs');
 const app = express();
 const port = 3000;
 
@@ -58,6 +58,9 @@ app.use(
         saveUninitialized: true,
     })
 );
+
+
+
 
 
 app.post("/register", async (req, res) => {
@@ -113,25 +116,6 @@ app.get("/logout", (req, res) => {
             return res.status(500).send("Error logging out.");
         }
         res.sendFile(path.join(__dirname, 'view', 'Login.html'));
-    });
-});
-// ดึงข้อมูลสินค้าตาม ID
-// ดึงข้อมูลสินค้าจากฐานข้อมูลด้วย name
-app.get('/product/:name', (req, res) => {
-    const productName = req.params.name; // รับชื่อของสินค้า
-    const sql = `SELECT name, price, stock_quantity, category FROM products WHERE name = ?`;
-
-    db.query(sql, [productName], (err, results) => {
-        if (err) {
-            console.error("Error fetching product:", err);
-            return res.status(500).json({ error: "Error fetching product." });
-        }
-
-        if (results.length === 0) {
-            return res.status(404).json({ error: "Product not found." });
-        }
-
-        res.json(results[0]); // ส่งข้อมูลสินค้าในรูปแบบ JSON
     });
 });
 

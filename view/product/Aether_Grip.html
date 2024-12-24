@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
+
 <body>
 
     <nav class="navbar navbar-expand-lg">
@@ -30,47 +31,6 @@
         </div>
     </nav>
 
-    <script>
-        // ฟังก์ชั่นดึงข้อมูล navbar จาก backend
-        fetch('/navbar')
-            .then(response => response.json()) // แปลงข้อมูลจาก JSON
-            .then(data => {
-                const navbarLinksContainer = document.getElementById('navbar-links');
-                data.forEach(link => {
-                    const li = document.createElement('li');
-                    li.classList.add('nav-item');
-                    li.innerHTML = `<a class="nav-link" href="${link.link}">${link.name}</a>`;
-                    navbarLinksContainer.appendChild(li);
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching navbar:', error);
-            });
-
-
-        // ดึง name ของสินค้าจาก URL
-        const productName = decodeURIComponent(window.location.pathname.split('/').pop()); // สมมติ URL เป็น /product/Aether%20Grip
-
-        // ดึงข้อมูลสินค้าจาก API
-        fetch(`/product/${productName}`)
-            .then(response => response.json())
-            .then(product => {
-                document.getElementById('product-name').textContent = product.name;
-                document.getElementById('product-price').textContent = `$${product.price}`;
-                document.getElementById('product-availability').textContent = product.stock_quantity > 0 ? 'In Stock' : 'Out of Stock';
-                document.getElementById('product-category').textContent = product.category;
-            })
-            .catch(error => {
-                console.error('Error fetching product details:', error);
-            });
-
-        // ฟังก์ชันเพิ่มสินค้าลงตะกร้า
-        function addToCart() {
-            alert('Added to cart!');
-        }
-
-    </script>
-
     <!-- Product Detail Section -->
     <section>
         <div class="container product-detail">
@@ -82,11 +42,11 @@
 
                 <!-- Product Information -->
                 <div class="col-md-6 product-info">
-                    <h2 id="product-name"></h2>
-                    <p><strong>Price:</strong> <span id="product-price"></span></p>
-                    <p><strong>Availability:</strong> <span id="product-availability"></span></p>
-                    <p><strong>Category:</strong> <span id="product-category"></span></p>
-                    <button class="btn-buy" onclick="addToCart()">Add to Cart</button>
+                    <h2>Aether Grip</h2>
+                    <p><strong>Price:</strong> $50</p>
+                    <p><strong>Availability:</strong> In Stock</p>
+                    <p><strong>Category:</strong> wearables</p>
+                    <button class="btn-buy" onclick="window.location.href='/cart'" >Add to Cart</button>
                 </div>
             </div>
 
