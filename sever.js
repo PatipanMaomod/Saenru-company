@@ -41,22 +41,81 @@ const db = mysql.createConnection({
 });
 
 
+db.connect((err) => {
+    if (err) {
+        console.error("Error connecting to MySQL:", err);
+        return;
+    }
+    console.log("Connected to MySQL database.");
+});
 // Middleware
+
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(
+    session({
+        secret: "your_secret_key",
+        resave: false,
+        saveUninitialized: true,
+    })
+);
 
 
-app.post('/user', async (req, res) => {
+app.post("/register", async (req, res) => {
     const { username, email, password } = req.body;
-  
-    const connection = await pool.getConnection();
-    const [result] = await connection.query(
-      'INSERT INTO users (username, email, password) VALUES (?, ?, ? NOW())',
-      [username, email,password]
-    );
-    connection.release();
-  
-    res.status(201).json({ id: result.insertId, username,email,password });
-  });
+
+    // เข้ารหัสรหัสผ่าน
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+    db.query(sql, [username, email, hashedPassword], (err, result) => {
+        if (err) {
+            console.error("Error saving user to database:", err);
+            return res.status(500).send("Error registering user.");
+        }
+        res.sendFile(path.join(__dirname, 'view', 'Login.html'));
+    });
+});
+app.post("/login", (req, res) => {
+    const { email, password } = req.body;
+
+    const sql = "SELECT * FROM users WHERE email = ?";
+    db.query(sql, [email], async (err, results) => {
+        if (err) {
+            console.error("Error querying database:", err);
+            return res.status(500).send("Error logging in.");
+        }
+
+        if (results.length === 0) {
+            return res.status(401).send("Invalid email or password.");
+        }
+
+        const user = results[0];
+        const passwordMatch = await bcrypt.compare(password, user.password);
+
+        if (!passwordMatch) {
+            return res.status(401).send("Invalid email or password.");
+        }
+
+        // สร้าง session ให้ผู้ใช้
+        req.session.user = {
+            id: user.id,
+            username: user.username,
+            email: user.email,
+        };
+
+        res.sendFile(path.join(__dirname, 'view', 'index.html'));
+    });
+});
+app.get("/logout", (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.error("Error logging out:", err);
+            return res.status(500).send("Error logging out.");
+        }
+        res.sendFile(path.join(__dirname, 'view', 'Login.html'));
+    });
+});
+
 // Routes
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'view', 'index.html'));
