@@ -49,23 +49,83 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'view', 'index.html'));
 });
 app.get('/product', (req, res) => {
-    res.sendFile(path.join(__dirname, 'view', 'product.html')); // ตรวจสอบเส้นทางนี้ให้ถูกต้อง
+    res.sendFile(path.join(__dirname, 'view', 'product.html'));
+});
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'about.html'));
+});
+app.get('/Login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'Login.html'));
+});
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'register.html'));
+});
+app.get('/basket', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'basket.html'));
+});
+
+
+app.get('/Aether_Grip', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'product/Aether_Grip.html'));
+});
+
+app.get('/Cosmic_Eye', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'product/Cosmic_Eye.html'));
+});
+
+app.get('/Cosmic_Orb', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'product/Cosmic_Orb.html'));
+});
+
+app.get('/Inferno_Gear', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'product/Inferno_Gear.html'));
+});
+
+app.get('/NeoVision', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'product/NeoVision.html'));
+});
+
+app.get('/Stellar_Nexus', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'product/Stellar_Nexus.html'));
+});
+
+app.get('/Void_Amulet', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'product/Void_Amulet.html'));
+});
+
+
+app.get('/buy-now', (req, res) => {
+    res.redirect('/product');
+});
+app.get('/buy', (req, res) => {
+    const productLinks = [
+        { name: "Aether_Grip", link: "/product/Aether_Grip" },
+        { name: "Cosmic_Eye", link: "/product/Cosmic_Eye" },
+        { name: "Cosmic_Orb", link: "/product/Cosmic_Orb" },
+        { name: "Inferno_Gear", link: "/product/Inferno_Gear" },
+        { name: "NeoVision", link: "/product/NeoVision" },
+        { name: "Stellar_Nexus", link: "/product/Stellar_Nexus" },
+        { name: "Void_Amulet", link: "/product/Void_Amulet" }
+    ];
+
+    res.json(productLinks); // ส่งข้อมูล JSON กลับไป
 });
 
 
 app.get('/navbar', (req, res) => {
     const navbarLinks = [
-      { name: "Home", link: "/" },
-      { name: "Features", link: "#features" },
-      { name: "Testimonial", link: "#testimonial" },
-      { name: "Shop", link: "/product" },
-      { name: "About us", link: "/about" },
-      { name: "Profile", link: "/profile" },
-      { name: "Login", link: "/login" }
+        { name: "Home", link: "/" },
+        { name: "Features", link: "/#features" },
+        { name: "Testimonial", link: "/#Testimonial" },
+        { name: "Shop", link: "/product" },
+        { name: "About us", link: "/about" },
+        { name: "Login", link: "/login" }
     ];
-  
+
     res.json(navbarLinks); // ส่งข้อมูลในรูปแบบ JSON
-  });
+});
+
+
 
 db.connect((err) => {
     if (err) throw err;

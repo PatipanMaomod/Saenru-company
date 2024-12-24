@@ -16,7 +16,41 @@
 
 <body>
     <!-- Navbar -->
-    <div id="navbar-container"></div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="image/logo.png" alt="Logo" style="height: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" id="navbar-links">
+                    <!-- ลิงก์เมนูจะถูกเพิ่มที่นี่โดย JavaScript -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // ฟังก์ชั่นดึงข้อมูล navbar จาก backend
+        fetch('/navbar')
+            .then(response => response.json()) // แปลงข้อมูลจาก JSON
+            .then(data => {
+                const navbarLinksContainer = document.getElementById('navbar-links');
+                data.forEach(link => {
+                    const li = document.createElement('li');
+                    li.classList.add('nav-item');
+                    li.innerHTML = `<a class="nav-link" href="${link.link}">${link.name}</a>`;
+                    navbarLinksContainer.appendChild(li);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching navbar:', error);
+            });
+    </script>
+
 
     <!-- About Section -->
     <section class="container my-5">
@@ -43,22 +77,72 @@
             <!-- Member 1 -->
             <div class="col-md-6 team-member text-center">
                 <div class="feature-box">
-                    <img src="image/me this.png" alt="นายปฏิภาณ เมาโหมด" class="img-fluid mb-3 rounded-circle" style="width: 120px;">
+                    <img src="image/me this.png" alt="นายปฏิภาณ เมาโหมด" class="img-fluid mb-3 rounded-circle"
+                        style="width: 120px;">
                     <h4>นายปฏิภาณ เมาโหมด</h4>
                     <p>หัวหน้าภารกิจการเก็บรวบรวม</p>
-                    <p>ผู้เชี่ยวชาญในการสำรวจและเก็บรวบรวมสินค้าอันเป็นเอกลักษณ์จากอวกาศ</p>
-                    <a href="https://github.com/PatipanMaomod" target="_blank" class="btn btn-outline-primary btn-sm">GitHub</a>
+                    <a href="https://patipanmaomod.github.io/resume/" target="_blank"
+                        class="btn btn-outline-primary btn-sm">see more</a>
                 </div>
             </div>
 
             <!-- Member 2 -->
             <div class="col-md-6 team-member text-center">
                 <div class="feature-box">
-                    <img src="image/eiei.png" alt="นายธีรเดช ฟักทอง" class="img-fluid mb-3 rounded-circle" style="width: 120px;">
+                    <img src="image/eiei.png" alt="นายธีรเดช ฟักทอง" class="img-fluid mb-3 rounded-circle"
+                        style="width: 120px;">
                     <h4>นายธีรเดช ฟักทอง</h4>
                     <p>นักวิเคราะห์ข้อมูลอวกาศ</p>
-                    <p>ผู้ประมวลผลข้อมูลเพื่อให้ร้านสามารถนำเสนอสินค้าพิเศษที่หาที่อื่นไม่ได้</p>
-                    <a href="https://github.com/Soramint" target="_blank" class="btn btn-outline-primary btn-sm">GitHub</a>
+                    <a href="https://soramint.github.io/testResume/" target="_blank"
+                        class="btn btn-outline-primary btn-sm">see more</a>
+                </div>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="col-md-6 team-member text-center">
+                <div class="feature-box">
+                    <img src="image/Frame.png" alt="นายธีรเดช ฟักทอง" class="img-fluid mb-3 rounded-circle"
+                        style="width: 120px;">
+                    <h4>นายกัมปนาท สุนทรธรรม</h4>
+                    <p>นักวิเคราะห์ข้อมูลอวกาศ</p>
+                    <a href="https://framecyber.github.io/fullstack/?fbclid=IwZXh0bgNhZW0CMTAAAR0ySMvbuWOlltCUbpnfuJiqPn64KzBhl60zUfrtez-7WWgTMwAJMB6l5o0_aem_t2_4GuNuLjdQjJgF9C-wtQ"
+                        target="_blank" class="btn btn-outline-primary btn-sm">see more</a>
+                </div>
+            </div>
+
+            <!-- Member 4 -->
+            <div class="col-md-6 team-member text-center">
+                <div class="feature-box">
+                    <img src="image/Omg.jpg" alt="นายปฏิภาณ เมาโหมด" class="img-fluid mb-3 rounded-circle"
+                        style="width: 120px;">
+                    <h4>นายรุจินพ สารแนร์</h4>
+                    <p>นักวิเคราะห์ข้อมูลอวกาศ</p>
+                    <a href="https://github.com/PatipanMaomod" target="_blank"
+                        class="btn btn-outline-primary btn-sm">see more</a>
+                </div>
+            </div>
+
+            <!-- Member 5 -->
+            <div class="col-md-6 team-member text-center">
+                <div class="feature-box">
+                    <img src="image/L1.png" alt="นายธีรเดช ฟักทอง" class="img-fluid mb-3 rounded-circle"
+                        style="width: 120px;">
+                    <h4>นายอดุลวิทย์ สถาปิตานนท์</h4>
+                    <p>นักวิเคราะห์ข้อมูลอวกาศ</p>
+                    <a href="https://blight7.github.io/resume/" target="_blank"
+                        class="btn btn-outline-primary btn-sm">see more</a>
+                </div>
+            </div>
+
+            <!-- Member 6 -->
+            <div class="col-md-6 team-member text-center">
+                <div class="feature-box">
+                    <img src="image/eiei.png" alt="นายธีรเดช ฟักทอง" class="img-fluid mb-3 rounded-circle"
+                        style="width: 120px;">
+                    <h4>นายสิทธิพล ปูนอน</h4>
+                    <p>นักวิเคราะห์ข้อมูลอวกาศ</p>
+                    <a href="https://github.com/sittipon179/My-Resume/deployments/github-pages" target="_blank"
+                        class="btn btn-outline-primary btn-sm">see more</a>
                 </div>
             </div>
         </div>
@@ -94,6 +178,16 @@
             </div>
         </div>
     </section>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar-container').innerHTML = data)
+            .catch(error => console.error('Error loading navbar:', error));
+    </script>
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

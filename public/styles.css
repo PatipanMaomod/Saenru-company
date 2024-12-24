@@ -362,7 +362,7 @@ body {
     top: 20px;           /* ระยะห่างจากขอบบน */
     left: 20px;          /* ระยะห่างจากขอบซ้าย */
     font-size: 24px;     /* ขนาดของไอคอน */
-    color: #333;         /* สีของไอคอน */
+    color: #ffffff;         /* สีของไอคอน */
   }
 
   .back-button:hover {
@@ -372,7 +372,7 @@ body {
   .card-go {
     width: 190px;
     height: 254px;
-    background: #07182e;
+    background: #ffffff;
     position: relative;
     display: flex;
     place-content: center;

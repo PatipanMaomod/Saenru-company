@@ -14,60 +14,87 @@
 
 <body>
 
-    <div id="navbar-container"></div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="image/logo.png" alt="Logo" style="height: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" id="navbar-links">
+                    <!-- ลิงก์เมนูจะถูกเพิ่มที่นี่โดย JavaScript -->
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <script>
+        // ฟังก์ชั่นดึงข้อมูล navbar จาก backend
+        fetch('/navbar')
+            .then(response => response.json()) // แปลงข้อมูลจาก JSON
+            .then(data => {
+                const navbarLinksContainer = document.getElementById('navbar-links');
+                data.forEach(link => {
+                    const li = document.createElement('li');
+                    li.classList.add('nav-item');
+                    li.innerHTML = `<a class="nav-link" href="${link.link}">${link.name}</a>`;
+                    navbarLinksContainer.appendChild(li);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching navbar:', error);
+            });
+    </script>
     <!-- Product Detail Section -->
     <div class="container product-detail">
         <div class="row bg-light p-4 rounded shadow-sm">
             <!-- Product Image -->
             <div class="col-md-6">
-                <img src="image/Stellar Nexus.png" alt="Product Image" class="product-img">
+                <img src="image/Cosmic Eye.png" alt="Product Image" class="product-img">
             </div>
-
+        
             <!-- Product Information -->
             <div class="col-md-6 product-info">
-                <h2>Stellar Nexus</h2>
+                <h2>Cosmic Eye</h2>
                 <p><strong>Price:</strong> SC80</p>
                 <p><strong>Availability:</strong> In Stock</p>
                 <p><strong>Category:</strong> wearables</p>
                 <button class="btn-buy">Add to Cart</button>
             </div>
         </div>
-
+        
 
         <div class="tabs-section mt-4">
             <div class="container">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="description-tab" data-bs-toggle="tab"
-                            data-bs-target="#description" type="button" role="tab">Description</button>
+                        <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description"
+                            type="button" role="tab">Description</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews"
                             type="button" role="tab">Reviews</button>
                     </li>
                 </ul>
-
+        
                 <!-- Content with background -->
-                <div class="tab-content p-4 mt-3 bg-light rounded shadow-sm" id="myTabContent"
-                    style="max-width: 900px; margin: 0 auto;">
+                <div class="tab-content p-4 mt-3 bg-light rounded shadow-sm" id="myTabContent" style="max-width: 900px; margin: 0 auto;">
                     <!-- Description Tab -->
                     <div class="tab-pane fade show active" id="description" role="tabpanel">
                         <p>
-                            "ก้าวข้ามขีดจำกัดแห่งความเป็นจริงกับ Stellar Nexus
-                            เครื่องประดับที่ถูกกล่าวขานว่าเป็นเศษเสี้ยวของดวงดาวที่สูญหายในความเวิ้งว้างของอวกาศ
-                            ออกแบบด้วยดีไซน์รูปดาวแฉกอันวิจิตรที่เปล่งประกายเหมือนพลังงานจากมิติที่ไม่มีใครเข้าถึง
+                            "เปิดประตูสู่จักรวาลที่เกินจินตนาการด้วย Cosmic Eye ผลงานศิลปะเชิงกลไกที่หลอมรวมความงามของเทคโนโลยีเข้ากับปริศนาแห่งห้วงอวกาศ ดวงตาเรืองแสงที่ดูราวกับจ้องมองผ่านมิติ เปิดเผยความลับที่หลบซ่อนอยู่ในความมืดมิด
 
-                            คริสตัลหลากสีที่ประดับบนจี้เปรียบเสมือนแผนที่ของกาแล็กซีที่เปลี่ยนแปลงตลอดเวลา
-                            พร้อมพลังลึกลับที่อาจเปลี่ยนโชคชะตาของผู้สวมใส่
-                            หรือเปิดประตูไปสู่โลกใหม่ที่คุณไม่เคยจินตนาการ
-                            ความงามที่แฝงไปด้วยอันตรายและความลึกลับนี้จะกลายเป็นสัญลักษณ์ของผู้กล้าที่พร้อมเผชิญหน้ากับสิ่งที่ไม่คาดฝัน
-
-                            🪐 Stellar Nexus ไม่ใช่แค่เครื่องประดับธรรมดา
-                            แต่มันคือคำเชิญจากจักรวาลที่พร้อมจะเปิดเผยความลับที่ซ่อนเร้นในเงามืด
+                            ออกแบบด้วยวัสดุพิเศษที่สะท้อนแสงราวกับพื้นผิวของดวงดาว ผสานกลไกที่เคลื่อนไหวได้เสมือนเป็นสิ่งมีชีวิตในห้วงอวกาศ Cosmic Eye ไม่ได้เป็นเพียงของตกแต่ง แต่เป็นประสบการณ์แห่งความพิศวงที่ทำให้คุณรู้สึกเหมือนกำลังถูกจับจ้องโดยความลับของจักรวาล
+                            
+                            เหมาะสำหรับผู้ที่กล้าหาญในการสำรวจสิ่งลี้ลับ หรือผู้ที่ต้องการชิ้นส่วนแห่งอวกาศในพื้นที่ของตัวเอง
+                            
+                            🌌 Cosmic Eye คือเครื่องเตือนใจว่า จักรวาลกว้างใหญ่และทุกดวงตาต่างมีเรื่องราวของตัวเอง เพียงคุณพร้อมเปิดใจ สิ่งแปลกใหม่จะปรากฏในมุมมองของคุณ"
                         </p>
                     </div>
-
+        
                     <!-- Reviews Tab -->
                     <div class="tab-pane fade" id="reviews" role="tabpanel">
                         <p><strong>John Doe:</strong> This product is amazing! (5 stars)</p>
@@ -76,8 +103,8 @@
                 </div>
             </div>
         </div>
-
-
+        
+        
 
     </div>
 
@@ -90,19 +117,19 @@
                     <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
                         alt="Facebook" class="icon-img" style="width: 30px; height: 30px;">
                 </a>
-
+    
                 <!-- X (Twitter) Icon -->
                 <a href="https://x.com/" class="text-white mx-3" target="_blank">
                     <img src="https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg"
                         alt="X" class="icon-img" style="width: 30px; height: 30px;">
                 </a>
-
+    
                 <!-- Instagram Icon -->
                 <a href="https://instagram.com" class="text-white mx-3" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
                         class="icon-img" style="width: 30px; height: 30px;">
                 </a>
-
+    
                 <!-- Gmail Icon -->
                 <a href="mailto:example@gmail.com" class="text-white mx-3">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png"
@@ -111,9 +138,7 @@
             </div>
         </div>
     </section>
-
-
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
@@ -127,5 +152,4 @@
             .catch(error => console.error('Error loading navbar:', error));
     </script>
 </body>
-
 </html>

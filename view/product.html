@@ -25,24 +25,30 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#features">Features</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#Testimonial">Testimonial</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/product">Shop</a></li>
-
-                    <!-- เชื่อมโยงไปที่ /product -->
-                    <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-                    <li class="nav-item ms-3">
-                        <a href="login.html">
-                            <img src="image/profile.png" alt="Profile"
-                                style="height: 40px; width: 40px; border-radius: 50%;">
-                        </a>
-                    </li>
+                <ul class="navbar-nav ms-auto" id="navbar-links">
+                    <!-- ลิงก์เมนูจะถูกเพิ่มที่นี่โดย JavaScript -->
                 </ul>
             </div>
         </div>
     </nav>
+
+    <script>
+        // ฟังก์ชั่นดึงข้อมูล navbar จาก backend
+        fetch('/navbar')
+            .then(response => response.json()) // แปลงข้อมูลจาก JSON
+            .then(data => {
+                const navbarLinksContainer = document.getElementById('navbar-links');
+                data.forEach(link => {
+                    const li = document.createElement('li');
+                    li.classList.add('nav-item');
+                    li.innerHTML = `<a class="nav-link" href="${link.link}">${link.name}</a>`;
+                    navbarLinksContainer.appendChild(li);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching navbar:', error);
+            });
+    </script>
 
     <div class="container mt-5">
         <div class="row g-4"> <!-- เพิ่ม g-4 เพื่อให้มีระยะห่างระหว่างการ์ด -->
@@ -58,7 +64,7 @@
                         <p class="card-text">Are you ready to bring Cosmic Orb into your journey to the unknown
                             universe?</p>
                         <p><strong>$50</strong></p>
-                        <button class="btn-buy" onclick="window.location.href='Cosmic Orb.html'">Buy Now</button>
+                        <button class="btn-buy" onclick="window.location.href='/Cosmic_Orb'">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -71,7 +77,7 @@
                         <h5 class="card-title">Aether Grip</h5>
                         <p class="card-text">Description of the product goes here. It’s a great item for everyone!</p>
                         <p><strong>$50</strong></p>
-                        <button class="btn-buy" onclick="window.location.href='Aether Grip.html'">Buy Now</button>
+                        <button class="btn-buy" onclick="window.location.href='/Aether_Grip'">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -84,7 +90,7 @@
                         <h5 class="card-title">Cosmic Eye</h5>
                         <p class="card-text">Another great product that will make your life easier. Check it out!</p>
                         <p><strong>$80</strong></p>
-                        <button class="btn-buy" onclick="window.location.href='Cosmic Eye.html'">Buy Now</button>
+                        <button class="btn-buy" onclick="window.location.href='/Cosmic_Eye'">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -98,7 +104,7 @@
                         <p class="card-text">This is a fantastic product, perfect for anyone looking for quality and
                             convenience.</p>
                         <p><strong>$120</strong></p>
-                        <button class="btn-buy" onclick="window.location.href='Inferno Gear.html'">Buy Now</button>
+                        <button class="btn-buy" onclick="window.location.href='/Inferno_Gear'">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -111,7 +117,7 @@
                         <h5 class="card-title">NeoVision</h5>
                         <p class="card-text">Description of the product goes here. It’s a great item for everyone!</p>
                         <p><strong>$50</strong></p>
-                        <button class="btn-buy" onclick="window.location.href='NeoVision.html'">Buy Now</button>
+                        <button class="btn-buy" onclick="window.location.href='/NeoVision'">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -124,7 +130,7 @@
                         <h5 class="card-title">Stellar Nexus</h5>
                         <p class="card-text">Another great product that will make your life easier. Check it out!</p>
                         <p><strong>$80</strong></p>
-                        <button class="btn-buy" onclick="window.location.href='Stellar Nexus.html'">Buy Now</button>
+                        <button class="btn-buy" onclick="window.location.href='/Stellar_Nexus'">Buy Now</button>
                     </div>
                 </div>
             </div>
@@ -138,7 +144,7 @@
                         <p class="card-text">This is a fantastic product, perfect for anyone looking for quality and
                             convenience.</p>
                         <p><strong>$120</strong></p>
-                        <button class="btn-buy" onclick="window.location.href='Void Amulet.html'">Buy Now</button>
+                        <button class="btn-buy" onclick="window.location.href='/Void_Amulet'">Buy Now</button>
                     </div>
                 </div>
             </div>
