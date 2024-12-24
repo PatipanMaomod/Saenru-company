@@ -78,6 +78,7 @@ app.post("/register", async (req, res) => {
         res.sendFile(path.join(__dirname, 'view', 'Login.html'));
     });
 });
+// ในส่วนของการล็อกอินบนฝั่งเซิร์ฟเวอร์
 app.post("/login", (req, res) => {
     const { email, password } = req.body;
 
@@ -106,9 +107,16 @@ app.post("/login", (req, res) => {
             email: user.email,
         };
 
-        res.sendFile(path.join(__dirname, 'view', 'index.html'));
+        // ส่งการตอบกลับเพื่อแสดงหน้าและแจ้งเตือนสำเร็จ
+        res.send(`
+            <script>
+                alert("ล็อกอินสำเร็จ");
+                window.location.href = '/'; // หรือเส้นทางที่ต้องการ
+            </script>
+        `);
     });
 });
+
 app.get("/logout", (req, res) => {
     req.session.destroy((err) => {
         if (err) {
@@ -118,6 +126,42 @@ app.get("/logout", (req, res) => {
         res.sendFile(path.join(__dirname, 'view', 'Login.html'));
     });
 });
+
+app.post("/admin/product", (req, res) => {
+    const { name, description, price, category } = req.body;
+    
+    const sql = "INSERT INTO products (name, description, price, category) VALUES (?, ?, ?, ?)";
+    db.query(sql, [name, description, price, category], (err, results) => {
+        if (err) {
+            return res.status(500).send("Error adding product.");
+        }
+        res.status(201).send("Product added successfully.");
+    });
+});app.put("/admin/product/:id", (req, res) => {
+    const { id } = req.params;
+    const { name, description, price, category } = req.body;
+    
+    const sql = "UPDATE products SET name = ?, description = ?, price = ?, category = ? WHERE id = ?";
+    db.query(sql, [name, description, price, category, id], (err, results) => {
+        if (err) {
+            return res.status(500).send("Error updating product.");
+        }
+        res.send("Product updated successfully.");
+    });
+});
+app.delete("/admin/product/:id", (req, res) => {
+    const { id } = req.params;
+    
+    const sql = "DELETE FROM products WHERE id = ?";
+    db.query(sql, [id], (err, results) => {
+        if (err) {
+            return res.status(500).send("Error deleting product.");
+        }
+        res.send("Product deleted successfully.");
+    });
+});
+
+
 
 
 // Routes
