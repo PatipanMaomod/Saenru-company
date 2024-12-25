@@ -143,6 +143,11 @@ app.get('/cart', (req, res) => {
     res.sendFile(path.join(__dirname, 'view', 'cart.html'));
 });
 
+app.get('/product_1.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'product_1.html'));
+});
+
+
 
 
 app.get('/Aether_Grip', (req, res) => {

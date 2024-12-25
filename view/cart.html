@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,62 +10,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
     <style>
-
-        .header {
-            background: #1a1a1a;
-            padding: 12px;
-            border-bottom: 1px solid #333;
-        }
-
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .search-container {
-            background: #1a1a1a;
-            padding: 20px;
-        }
-
-        .search-bar {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .logo {
-            color: #ff4d4d;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .search-input {
-            flex: 1;
-            display: flex;
-        }
-
-        .search-input input {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            background: #2d2d2d;
-            color: #e0e0e0;
-            border-radius: 4px 0 0 4px;
-        }
-
-        .search-btn {
-            padding: 10px 20px;
-            background: #ff4d4d;
-            border: none;
-            color: white;
-            border-radius: 0 4px 4px 0;
-            cursor: pointer;
-        }
-
         .cart-container {
             max-width: 1200px;
             margin: 20px auto;
@@ -83,7 +27,7 @@
 
         .cart-item {
             display: grid;
-            grid-template-columns: 6fr 2fr 2fr 2fr;
+            grid-template-columns: 3fr 3fr 2fr 2fr;
             padding: 15px;
             align-items: center;
             border-bottom: 1px solid #333;
@@ -158,29 +102,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto" id="navbar-links">
-                    <!-- ลิงก์เมนูจะถูกเพิ่มที่นี่โดย JavaScript -->
+                    <!-- Navbar links will be added here by JavaScript -->
                 </ul>
             </div>
         </div>
     </nav>
-
-    <script>
-        // ฟังก์ชั่นดึงข้อมูล navbar จาก backend
-        fetch('/navbar')
-            .then(response => response.json()) // แปลงข้อมูลจาก JSON
-            .then(data => {
-                const navbarLinksContainer = document.getElementById('navbar-links');
-                data.forEach(link => {
-                    const li = document.createElement('li');
-                    li.classList.add('nav-item');
-                    li.innerHTML = `<a class="nav-link" href="${link.link}">${link.name}</a>`;
-                    navbarLinksContainer.appendChild(li);
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching navbar:', error);
-            });
-    </script>
 
     <div class="cart-container">
         <div class="cart-header">
@@ -190,40 +116,96 @@
             <div style="text-align: center">ราคารวม</div>
         </div>
 
-        <div class="cart-item">
-
-            <div class="quantity-controls">
-                <button class="quantity-btn" onclick="updateQuantity(-1)">-</button>
-                <input type="text" value="1" class="quantity-input" id="quantity">
-                <button class="quantity-btn" onclick="updateQuantity(1)">+</button>
-            </div>
-            <div class="price" style="text-align: center" id="total">฿0</div>
+        <div id="cart-items">
+            <!-- Cart items will be dynamically inserted here -->
         </div>
 
         <div class="cart-footer">
             <div>
-                <input type="checkbox"> เลือกทั้งหมด (1)
-            </div>
-            <div>
-                รวม (0 สินค้า): <span class="price" id="grandTotal">฿0</span>
+                รวม (1 สินค้า): <span class="price" id="grandTotal">฿0</span>
                 <button class="checkout-btn" onclick="window.location.href='/basket'">สั่งสินค้า</button>
             </div>
         </div>
+    </div>
 
+    <script>
+        function addTestItemToCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        <script>
-            function updateQuantity(change) {
-                const quantityInput = document.getElementById('quantity');
-                const totalElement = document.getElementById('total');
-                const basePrice = 0;
+            // Example item to add to cart
+            const newItem = {
+                name: "Cosmic Orb",
+                price: "50$", // Price in USD
+                quantity: 1,
+                imageUrl: "image/Cosmic Orb.png"
+            };
 
-                let newQuantity = parseInt(quantityInput.value) + change;
-                if (newQuantity < 1) newQuantity = 1;
+            // Add the new item to the cart array
+            cart.push(newItem);
 
-                quantityInput.value = newQuantity;
-                totalElement.textContent = '฿' + (basePrice * newQuantity).toLocaleString();
-            }
-        </script>
+            // Save the updated cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Update the cart display
+            updateCart();
+        }
+
+        function updateCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            let grandTotal = 0;
+
+            cartItemsContainer.innerHTML = ''; // Clear the cart items container
+
+            // Loop through the cart and add each item
+            cart.forEach((item, index) => {
+                const cartItemElement = document.createElement('div');
+                cartItemElement.classList.add('cart-item');
+                cartItemElement.innerHTML = `
+                    <div class="product-info">
+                        <img src="${item.imageUrl}" alt="${item.name}" style="width: 50px; height: 50px;">
+                        <div>${item.name}</div>
+                    </div>
+                    <div style="text-align: center">${item.price}</div>
+                    <div style="text-align: center">
+                        <div class="quantity-controls">
+                            <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                            <input type="text" value="${item.quantity}" class="quantity-input" id="quantity-${index}">
+                            <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
+                        </div>
+                    </div>
+                    <div style="text-align: center" id="total-${index}">${item.price.replace('$', '฿')} ${item.quantity}</div>
+                `;
+                cartItemsContainer.appendChild(cartItemElement);
+                grandTotal += parseInt(item.price.replace('$', '').replace(',', '')) * item.quantity;
+            });
+
+            document.getElementById('grandTotal').textContent = '฿' + grandTotal.toLocaleString();
+        }
+
+        function updateQuantity(index, change) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let item = cart[index];
+            item.quantity = Math.max(1, item.quantity + change);
+
+            // Update cart in localStorage
+            cart[index] = item;
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Update the total for this item and grand total
+            document.getElementById(`quantity-${index}`).value = item.quantity;
+            const totalPrice = parseInt(item.price.replace('$', '').replace(',', '')) * item.quantity;
+            document.getElementById(`total-${index}`).textContent = '฿' + totalPrice.toLocaleString();
+
+            // Update grand total
+            updateCart();
+        }
+
+        // Call this function when you want to add the item
+        addTestItemToCart();
+
+        window.onload = updateCart;
+    </script>
 </body>
 
 </html>
