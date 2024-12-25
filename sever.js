@@ -78,7 +78,8 @@ app.post("/register", async (req, res) => {
         res.sendFile(path.join(__dirname, 'view', 'Login.html'));
     });
 });
-app.post("/login", (req, res) => {
+// ในส่วนของการล็อกอินบนฝั่งเซิร์ฟเวอร์
+app.post('/login', (req, res) => {
     const { email, password } = req.body;
 
     const sql = "SELECT * FROM users WHERE email = ?";
@@ -89,14 +90,24 @@ app.post("/login", (req, res) => {
         }
 
         if (results.length === 0) {
-            return res.status(401).send("Invalid email or password.");
+            return res.send(`
+                <script>
+                    alert("Invalid email or password.");
+                    window.location.href = '/login';
+                </script>
+            `);
         }
 
         const user = results[0];
         const passwordMatch = await bcrypt.compare(password, user.password);
 
         if (!passwordMatch) {
-            return res.status(401).send("Invalid email or password.");
+            return res.send(`
+                <script>
+                    alert("Invalid email or password.");
+                    window.location.href = '/login';
+                </script>
+            `);
         }
 
         // สร้าง session ให้ผู้ใช้
@@ -106,9 +117,15 @@ app.post("/login", (req, res) => {
             email: user.email,
         };
 
-        res.sendFile(path.join(__dirname, 'view', 'index.html'));
+        // เปลี่ยนเส้นทางไปที่หน้า account
+        res.redirect('/account');
     });
 });
+
+
+
+
+
 app.get("/logout", (req, res) => {
     req.session.destroy((err) => {
         if (err) {
@@ -118,6 +135,42 @@ app.get("/logout", (req, res) => {
         res.sendFile(path.join(__dirname, 'view', 'Login.html'));
     });
 });
+
+app.post("/admin/product", (req, res) => {
+    const { name, description, price, category } = req.body;
+    
+    const sql = "INSERT INTO products (name, description, price, category) VALUES (?, ?, ?, ?)";
+    db.query(sql, [name, description, price, category], (err, results) => {
+        if (err) {
+            return res.status(500).send("Error adding product.");
+        }
+        res.status(201).send("Product added successfully.");
+    });
+});app.put("/admin/product/:id", (req, res) => {
+    const { id } = req.params;
+    const { name, description, price, category } = req.body;
+    
+    const sql = "UPDATE products SET name = ?, description = ?, price = ?, category = ? WHERE id = ?";
+    db.query(sql, [name, description, price, category, id], (err, results) => {
+        if (err) {
+            return res.status(500).send("Error updating product.");
+        }
+        res.send("Product updated successfully.");
+    });
+});
+app.delete("/admin/product/:id", (req, res) => {
+    const { id } = req.params;
+    
+    const sql = "DELETE FROM products WHERE id = ?";
+    db.query(sql, [id], (err, results) => {
+        if (err) {
+            return res.status(500).send("Error deleting product.");
+        }
+        res.send("Product deleted successfully.");
+    });
+});
+
+
 
 
 // Routes
@@ -141,6 +194,14 @@ app.get('/basket', (req, res) => {
 });
 app.get('/cart', (req, res) => {
     res.sendFile(path.join(__dirname, 'view', 'cart.html'));
+});
+app.get('/account', (req, res) => {
+    if (!req.session.user) {
+        return res.redirect('/login'); // หากยังไม่ได้เข้าสู่ระบบ ให้กลับไปที่หน้า login
+    }
+    // ส่งไฟล์ account.html
+    res.sendFile(path.join(__dirname, 'view', 'account.html'));
+
 });
 
 app.get('/product_1.html', (req, res) => {
@@ -197,18 +258,52 @@ app.get('/buy', (req, res) => {
 });
 
 
+
+app.post('/update-profile', (req, res) => {
+    const { username, email, phone } = req.body;
+
+    const userId = req.session.user.id; // ดึง ID ผู้ใช้จาก session
+
+    const sql = "UPDATE users SET username = ?, email = ?, phone = ? WHERE id = ?";
+    db.query(sql, [username, email, phone, userId], (err) => {
+        if (err) {
+            console.error("Error updating profile:", err);
+            return res.status(500).send("เกิดข้อผิดพลาดในการอัปเดตข้อมูล.");
+        }
+
+        // อัปเดต session หลังแก้ไขข้อมูล
+        req.session.user.username = username;
+        req.session.user.email = email;
+
+        res.send(`
+            <script>
+                alert("แก้ไขข้อมูลส่วนตัวสำเร็จ");
+                window.location.href = '/account';
+            </script>
+        `);
+    });
+});
+
+
+
 app.get('/navbar', (req, res) => {
+    // ตรวจสอบสถานะการเข้าสู่ระบบ
+    const isLoggedIn = req.session.user ? true : false;
+
     const navbarLinks = [
         { name: "Home", link: "/" },
         { name: "Features", link: "/#features" },
         { name: "Testimonial", link: "/#Testimonial" },
         { name: "Shop", link: "/product" },
         { name: "About us", link: "/about" },
-        { name: "Login", link: "/login" }
+        isLoggedIn 
+            ? { name: "Account", link: "/account" } 
+            : { name: "Login", link: "/login" } // เปลี่ยนลิงก์ตามสถานะการล็อกอิน
     ];
 
     res.json(navbarLinks); // ส่งข้อมูลในรูปแบบ JSON
 });
+
 
 
 
